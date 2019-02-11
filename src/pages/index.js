@@ -1,6 +1,7 @@
 import React from 'react'
 import '../components/layout.css'
 import Social from '../components/social/social'
+import Song from '../components/song/song'
 import portrait from '../images/good_0.jpg'
 import light_portrait from '../images/light_0.jpg'
 import daniel from '../images/good_2.jpg'
@@ -11,6 +12,13 @@ import logo from '../components/logo.png'
 import ignoredYouGraphic from '../images/ignoredyou.png'
 import isItLoveGraphic from '../images/isitlove.png'
 import moveWithMeGraphic from '../images/movewithme.png'
+// import ignoredYou from './ignoredyou.mp3'
+// import isItLove from './isitlove.mp3'
+// import moveWithMe from './movewithme.mp3'
+const ignoredYou = ''
+const isItLove = ''
+const moveWithMe = ''
+
 
 class App extends React.Component {
   state = {
@@ -69,18 +77,9 @@ class App extends React.Component {
         <div id='music'>
           <div>singles</div>
           <div className='singles'>
-            <div>
-              <img src={ignoredYouGraphic} alt='ignored you single' />
-              <audio></audio>
-            </div>
-            <div>
-              <img src={isItLoveGraphic} alt='is it love single' />
-              <audio></audio>
-            </div>
-            <div>
-              <img src={moveWithMeGraphic} alt='move with me single' />
-              <audio></audio>
-            </div>
+            <Song graphic={ignoredYouGraphic} song={ignoredYou} title='ignored you' />
+            <Song graphic={isItLoveGraphic} song={isItLove} title='is it love' />
+            <Song graphic={moveWithMeGraphic} song={moveWithMe} title='move with me' />
             <iframe 
               width='560'
               height='315'
