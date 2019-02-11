@@ -1,4 +1,4 @@
-#social {
+#socialIcons {
     display: flex;
     justify-content: space-evenly;
     width: 55vw;
@@ -6,10 +6,10 @@
 }
 
 .links:hover, #buyDiv:hover {
-    background-color: rgba(0,0,0,0.1)
+    background-color: rgba(0,0,0,0.3)
 }
 
-#social .links {
+#socialIcons .links {
     height: 80px;
     width: 80px;
     display: flex;
@@ -17,7 +17,7 @@
     justify-content: center;
 }
 
-#social .links a, #social .links a img {
+#socialIcons .links a, #socialIcons .links a img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,8 +32,7 @@
     justify-content: center;
     height: 80px !important;
     width: 80px !important;
-    background: rgba(256,256,256,0.5);
-    border-radius: 5px
+    background: rgba(256,256,256,0.5)
 }
 #buy {
     text-decoration: none;
@@ -51,19 +50,14 @@
 }
 
 @media only screen and (max-width: 710px) {
-    #social {width: 90vw}
-    #social .links {
+    #socialIcons {width: 90vw}
+    #socialIcons .links {
         height: 60px;
         width: 60px;
     }
     #buyDiv {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         height: 60px !important;
         width: 60px !important;
-        background: rgba(256,256,256,0.5);
-        border-radius: 5px
     }
     #buy p {
         height: 20px;

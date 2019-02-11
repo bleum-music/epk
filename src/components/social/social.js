@@ -5,7 +5,7 @@ import instagram from '../instagram.png'
 
 const Social = () => {
   return (
-    <div id='social'>
+    <div id='socialIcons'>
       <div className='links'>
         <a
           href='https://www.facebook.com/bleummusic/?ref=br_rs'

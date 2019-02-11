@@ -8,6 +8,9 @@ import light_daniel from '../images/light_2.jpg'
 import brittany from '../images/good_3.jpg'
 import light_brittany from '../images/light_3.jpg'
 import logo from '../components/logo.png'
+import ignoredYouGraphic from '../images/ignoredyou.png'
+import isItLoveGraphic from '../images/isitlove.png'
+import moveWithMeGraphic from '../images/movewithme.png'
 
 class App extends React.Component {
   state = {
@@ -41,7 +44,7 @@ class App extends React.Component {
 
     const aboutUs = 
     this.state.loadFirst ? portrait : light_portrait
-    const music = 
+    const social = 
     this.state.loadSecond ? daniel : light_daniel
     const contact = 
     this.state.loadThird ? brittany : light_brittany
@@ -64,9 +67,17 @@ class App extends React.Component {
           latest single 'Visit' was selected to be on Blundstone Canada's online playlist.</p>
         </div>
         <div id='music'>
+          <div>singles</div>
+          <div className='singles'>
+            <img src={ignoredYouGraphic} alt='ignored you single' />
+            <img src={isItLoveGraphic} alt='is it love single' />
+            <img src={moveWithMeGraphic} alt='move with me single' />
+          </div>
+        </div>
+        <div id='social'>
           <div className='spacer' />
-          <div>music</div>
-          <img src={music} alt='daniel' />
+          <div>social media</div>
+          <img src={social} alt='daniel' />
           <Social />
         </div>
         <div id='contact'>
