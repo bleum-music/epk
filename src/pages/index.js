@@ -7,18 +7,24 @@ import daniel from '../images/good_2.jpg'
 import light_daniel from '../images/light_2.jpg'
 import brittany from '../images/good_3.jpg'
 import light_brittany from '../images/light_3.jpg'
+import logo from '../components/logo.png'
 
 class App extends React.Component {
   state = {
+    isLoaded: false,
     loadFirst: false,
     loadSecond: false,
-    loadThird: false
+    loadThird: false,
+    logoLoaded: false
   }
 
   componentDidMount(){
+    const logoLoad = new Image()
+    logoLoad.src = logo
+    logoLoad.onload = () => {this.setState({logoLoaded: true})}
     const first = new Image()
     first.src = portrait
-    first.onload = () => {this.setState({loadFirst: true})}
+    first.onload = () => {this.setState({loadFirst: true, isLoaded: true})}
     const second = new Image()
     second.src = daniel
     second.onload = () => {this.setState({loadSecond: true})}
@@ -28,6 +34,11 @@ class App extends React.Component {
   }
 
   render () {
+    let isLoaded = this.state.isLoaded ? "ready" : "placeHolder"
+
+    let logoPlaceHolder = <div className="logo">bleum</div>
+    if(this.state.logoLoaded){logoPlaceHolder = <img className="logo" src={logo} alt="brand logo"/>}
+
     const aboutUs = 
     this.state.loadFirst ? portrait : light_portrait
     const music = 
@@ -37,10 +48,11 @@ class App extends React.Component {
 
     return (
       <div className='App'>
-        <div id='aboutus'>
-          <div className='spacer' />
-          <div>about us</div>
-          <img src={aboutUs} alt='brittany and daniel sitting together' />
+        <div id='aboutus' className={isLoaded}>
+          <div id="banner">
+            {logoPlaceHolder}
+            <img src={aboutUs} alt='brittany and daniel sitting together' />
+          </div>
           <p>Bleum is an electronic music duo consisting of producer Daniel James
           and singer/songwriter Brittany McQuinn. They began working together in
           2016 after Daniel saw Brittany perform live. Impressed by her pop sensibility,
@@ -51,14 +63,6 @@ class App extends React.Component {
           and Bleum was born. They've gone on to perform at multiple festivals. Their
           latest single 'Visit' was selected to be on Blundstone Canada's online playlist.</p>
         </div>
-        {/* <div id='shows'>
-          <div className='spacer' />
-          <div>shows</div>
-          <img src={tbd} alt='tbd' />
-          <p>location - time</p>
-          <p>location - time</p>
-          <p>location - time</p>
-        </div> */}
         <div id='music'>
           <div className='spacer' />
           <div>music</div>

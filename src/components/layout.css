@@ -13,8 +13,8 @@
 
 body {
     font-family: "gill_sans", sans-serif;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     height: min-content;
     width: 100vw
 }
@@ -28,50 +28,21 @@ body {
     align-items: center
 }
 
-nav {
-    position: fixed;
-    z-index: 2;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 100vw;
-    box-shadow: 0 0 2px white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background: black
-}
-
-nav a {color: white}
-
-#band {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    width: 100px;
-    font-size: 18px
-}
-
-#band img {width: 80px; height: unset}
-
-.heading {
-    text-decoration: none;
-    width: 85px;
-    height: 50px;
-    font-size: 20px;
-    display: flex !important;
-    justify-content: space-evenly;
-    align-items: center
-}
-
-.heading:hover, .heading:active {background: rgba(221, 150, 150, 0.20)}
-
-#hamburger {display: none}
-.hideThis {display: unset}
 .spacer {height: 30px}
+.ready {position: static}
+.placeHolder {height: 80vw !important}
+
+#banner {position: relative}
+#banner .logo {
+    font-size: 24px;
+    width: 100px !important;
+    height: unset !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2
+}
 
 #aboutus, #shows, #music, #contact {
     height: min-content;
@@ -86,11 +57,15 @@ nav a {color: white}
 }
 #aboutus p, #shows p, #music p, #contact p {
     line-height: 1.5;
-    font-size: 20px;
-    text-align: justify
+    font-size: 20px
 }
-#aboutus img, #shows img, #music img, #contact img {
+#shows img, #music img, #contact img {
     width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto
+}
+#aboutus div img {
+    width: 100%;
     height: auto;
     margin: 0 auto 10px auto
 }
@@ -107,63 +82,11 @@ nav a {color: white}
     font-size: 20px;
 }
 
-#contact p a:hover {box-shadow: 0 4px 4px -4px white}
+#contact p a:hover {box-shadow: 0 4px 4px -4px black}
 
 @media only screen and (max-width: 710px) {
-    .hideThis {display: none !important}
-
-    #band {
-        height: 50px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-bottom: 1px solid white
-    }
-
-    nav {
-        top: 0;
-        height: unset;
-        min-height: 50px;
-        flex-direction: column;
-        border-bottom: 1px solid white;
-        box-shadow: unset
-    }
 
     #aboutus, #shows, #music, #contact {width: 90vw}
     #aboutus p, #shows p, #music p, #contact p {text-align: unset}
-    #aboutus img, #shows img, #music img, #contact img {width: 100%}
-
-    .heading {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        border-bottom: 1px solid white
-    }
-
-    #hamburger {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 5px;
-        left: 10px;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 30px;
-        width: 30px;
-        padding: 4px;
-        background: black;
-        border: 1px solid white;
-        border-radius: 3px
-    }
-
-    #hamburger hr {
-        width: 25px;
-        height: 2px;
-        border-radius: 2px;
-        background: white;
-        margin: 0
-    }
+    #aboutus div img, #shows img, #music img, #contact img {width: 100%}
 }
