@@ -1,0 +1,79 @@
+#social {
+    display: flex;
+    justify-content: space-evenly;
+    width: 55vw;
+    margin: 0 auto !important
+}
+
+.links:hover, #buyDiv:hover {
+    background-color: rgba(256,256,256,0.1)
+}
+
+#social .links {
+    height: 80px;
+    width: 80px;
+}
+
+#social .links a, #social .links a img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0
+}
+
+#fb {
+    height: 60px !important;
+    width: 60px !important
+}
+
+#buyDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px !important;
+    width: 80px !important;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px
+}
+#buy {
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px
+}
+#buy p {
+    height: 20px;
+    text-align: center;
+    color: white
+}
+
+@media only screen and (max-width: 710px) {
+    #social {width: 90vw}
+    #social .links {
+        height: 60px;
+        width: 60px;
+    }
+    #fb {
+        height: 45px !important;
+        width: 45px !important
+    }
+    #buyDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px !important;
+        width: 60px !important;
+        background: rgba(0,0,0,0.5);
+        border-radius: 5px
+    }
+    #buy p {
+        height: 20px;
+        text-align: center;
+        color: white
+    }
+}
