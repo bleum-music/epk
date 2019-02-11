@@ -1,6 +1,5 @@
 import React from 'react'
-import ImageLoader from '../components/imageLoader/imageLoader'
-import Layout from '../components/layout'
+import '../components/layout.css'
 import Social from '../components/social/social'
 import portrait from '../images/good_0.jpg'
 import light_portrait from '../images/light_0.jpg'
@@ -38,8 +37,6 @@ class App extends React.Component {
 
     return (
       <div className='App'>
-        <ImageLoader />
-        <Layout />
         <div id='aboutus'>
           <div className='spacer' />
           <div>about us</div>
