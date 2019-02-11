@@ -37,10 +37,10 @@ class App extends React.Component {
   }
 
   render () {
-    let isLoaded = this.state.isLoaded ? "ready" : "placeHolder"
+    let isLoaded = this.state.isLoaded ? 'ready' : 'placeHolder'
 
-    let logoPlaceHolder = <div className="logo">bleum</div>
-    if(this.state.logoLoaded){logoPlaceHolder = <img className="logo" src={logo} alt="brand logo"/>}
+    let logoPlaceHolder = <div className='logo'>bleum</div>
+    if(this.state.logoLoaded){logoPlaceHolder = <img className='logo' src={logo} alt='brand logo'/>}
 
     const aboutUs = 
     this.state.loadFirst ? portrait : light_portrait
@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <div id='aboutus' className={isLoaded}>
-          <div id="banner">
+          <div id='banner'>
             {logoPlaceHolder}
             <img src={aboutUs} alt='brittany and daniel sitting together' />
           </div>
@@ -69,9 +69,26 @@ class App extends React.Component {
         <div id='music'>
           <div>singles</div>
           <div className='singles'>
-            <img src={ignoredYouGraphic} alt='ignored you single' />
-            <img src={isItLoveGraphic} alt='is it love single' />
-            <img src={moveWithMeGraphic} alt='move with me single' />
+            <div>
+              <img src={ignoredYouGraphic} alt='ignored you single' />
+              <audio></audio>
+            </div>
+            <div>
+              <img src={isItLoveGraphic} alt='is it love single' />
+              <audio></audio>
+            </div>
+            <div>
+              <img src={moveWithMeGraphic} alt='move with me single' />
+              <audio></audio>
+            </div>
+            <iframe 
+              width='560'
+              height='315'
+              src='https://www.youtube.com/embed/Vrg7yaniKn4'
+              frameborder='0'
+              allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
         <div id='social'>
@@ -84,7 +101,7 @@ class App extends React.Component {
           <div className='spacer' />
           <div>contact</div>
           <img src={contact} alt='brittany' />
-          <p><a href="mailto:bleum.music@gmail.com" target="_top">bleum.music@gmail.com</a></p>
+          <p><a href='mailto:bleum.music@gmail.com' target='_top'>bleum.music@gmail.com</a></p>
         </div>
       </div>
     )
