@@ -27,12 +27,12 @@ class Song extends React.Component {
       <React.Fragment>
         <audio src={this.props.song}>browser doesn't support audio</audio>
         <div class='player'>
-          <img src={this.props.graphic} />
+          {/* <img src={this.props.graphic} alt={this.props.title}/> */}
           <div class='info'>
             <div class='name'>{this.props.title}</div>
           </div>
           <div class='btns'>
-            <div class='iconfont play-pause icon-play' onClick={playHander}/>
+            <div class='iconfont play-pause icon-play' onClick={this.playHander}/>
           </div>
           <div class='progress' />
         </div>

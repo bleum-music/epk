@@ -15,9 +15,10 @@ import moveWithMeGraphic from '../images/movewithme.png'
 // import ignoredYou from './ignoredyou.mp3'
 // import isItLove from './isitlove.mp3'
 // import moveWithMe from './movewithme.mp3'
-const ignoredYou = ''
-const isItLove = ''
-const moveWithMe = ''
+import test from '../newBeginningInst.m4a'
+const ignoredYou = test
+const isItLove = test
+const moveWithMe = test
 
 
 class App extends React.Component {
@@ -75,20 +76,21 @@ class App extends React.Component {
           latest single 'Visit' was selected to be on Blundstone Canada's online playlist.</p>
         </div>
         <div id='music'>
+          <div className='spacer' />
           <div>singles</div>
           <div className='singles'>
             <Song graphic={ignoredYouGraphic} song={ignoredYou} title='ignored you' />
             <Song graphic={isItLoveGraphic} song={isItLove} title='is it love' />
             <Song graphic={moveWithMeGraphic} song={moveWithMe} title='move with me' />
-            <iframe 
-              width='560'
-              height='315'
+          </div>
+          <iframe 
+              width='400'
+              height='300'
               src='https://www.youtube.com/embed/Vrg7yaniKn4'
               frameborder='0'
               allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
               allowfullscreen>
-            </iframe>
-          </div>
+          </iframe>
         </div>
         <div id='social'>
           <div className='spacer' />
