@@ -1,6 +1,6 @@
 .songContainer {
-    height: 260px;
-    width: 260px;
+    height: 30%;
+    width: 30%;
     position: relative
 }
 
@@ -42,34 +42,23 @@
     justify-content: center;
     align-items: center
 }
-/* .progress {
+.black {
     position: absolute;
     height: 100%;
     left: 0;
     bottom: 0;
     z-index: 3;
-    background-color: rgba(0,0,0,0.4);
-} */
+    background-color: rgba(0,0,0,0.3);
+}
+.white {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(256,256,256,0.3);
+}
 .play-pause {
     height: 100% !important;
     width: auto
-}
-
-@media only screen and (max-width: 1000px) {
-    .songContainer {
-        height: 200px;
-        width: 200px
-    }
-}
-@media only screen and (max-width: 775px) {
-    .songContainer {
-        height: 150px;
-        width: 150px
-    }
-}
-@media only screen and (max-width: 500px) {
-    .songContainer {
-        height: 100px;
-        width: 100px
-    }
 }

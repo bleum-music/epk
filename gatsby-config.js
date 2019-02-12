@@ -1,3 +1,3 @@
 module.exports = {
-  pathPrefix: '/bleum'
+  pathPrefix: '/epk'
 }

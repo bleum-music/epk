@@ -28,15 +28,26 @@ body {
     align-items: center
 }
 
-.spacer {height: 30px}
+.spacer {height: 10px}
 .ready {position: static}
-.placeHolder {height: 80vw !important}
+.placeHolder {height: 100% !important}
 
-#banner {position: relative}
+#banner {
+    position: relative;
+    width: 98%;
+    height: 33.75vw;
+    margin-bottom: 10px;
+    background-color: rgb(56,182,255)
+}
+#banner img {
+    width: 100% !important;
+    height: 100% !important
+}
 #banner .logo {
     font-size: 24px;
-    width: 100px !important;
-    height: unset !important;
+    color: white;
+    width: 200px !important;
+    height: auto !important;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -44,15 +55,9 @@ body {
     z-index: 2
 }
 
-#aboutus, #social, #contact {
+#aboutus, #social, #music, #contact {
     height: min-content;
     width: 60vw;
-    display: flex;
-    flex-direction: column
-}
-#music {
-    height: min-content;
-    width: 80vw;
     display: flex;
     flex-direction: column
 }
@@ -75,7 +80,7 @@ body {
     padding-left: 20px
 }
 #social img, #contact img {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 0 auto 10px auto
 }
@@ -87,8 +92,9 @@ body {
 
 #music .singles {
     display: flex;
-    justify-content: center;
-    margin: 10px
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0
 }
 
 iframe {
@@ -111,12 +117,22 @@ iframe {
 
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}
 
-@media only screen and (max-width: 710px) {
-    #aboutus, #social, #music, #contact {width: 90vw}
-    #aboutus p, #social p, #contact p {text-align: unset}
-    #aboutus div img, #social img, #contact img {width: 100%}
+@media only screen and (max-width: 1300px) {
+    #aboutus, #social, #music, #contact {width: 70vw}
+    iframe {width: 70vw}
+}
 
-    iframe {
-        width: 80vw
-    }
+@media only screen and (max-width: 1000px) {
+    #aboutus, #social, #music, #contact {width: 80vw}
+    iframe {width: 80vw}
+}
+
+@media only screen and (max-width: 700px) {
+    #aboutus, #social, #music, #contact {width: 90vw}
+    iframe {width: 90vw}
+}
+
+@media only screen and (max-width: 400px) {
+    #aboutus, #social, #music, #contact {width: 95vw}
+    iframe {width: 95vw}
 }
