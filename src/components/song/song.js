@@ -1,40 +1,46 @@
 import React from 'react'
 import './song.css'
+import play from './play.png'
+import pause from './pause.png'
 
 class Song extends React.Component {
+  state = {
+    src: play
+  }
+
   playHandler = () => {
-    var aud = document.getElementsByClassName('audio')[0]
-    var playB = document.getElementsByClassName('play-pause')[0]
-    var progress = document.getElementsByClassName('progress')[0]
+    var aud = document.getElementById(this.props.id)
+    var playB = document.getElementsByClassName('play-pause')[Number(this.props.index)]
+    // var progress = document.getElementsByClassName('progress')[Number(this.props.index)]
 
     if (aud.paused) {
       aud.play()
-      playB.removeClass('icon-play')
-      playB.addClass('icon-stop')
+      this.setState({src: pause})
     }
     else {
       aud.pause()
-      playB.removeClass('icon-stop')
-      playB.addClass('icon-play')
+      this.setState({src: play})
     }
-    aud.ontimeupdate = () => {
-      progress.css('width', aud.currentTime / aud.duration * 100 + '%')
-    }
+    // aud.ontimeupdate = () => {
+    //   progress.style.width = `${aud.currentTime / aud.duration * 100}%`
+    // }
   }
 
   render () {
     return (
       <React.Fragment>
-        <audio src={this.props.song}>browser doesn't support audio</audio>
-        <div class='player'>
-          {/* <img src={this.props.graphic} alt={this.props.title}/> */}
-          <div class='info'>
-            <div class='name'>{this.props.title}</div>
+        <audio id={this.props.id} src={this.props.song}>browser doesn't support audio</audio>
+        <div className='songContainer'>
+          <img src={this.props.graphic} alt={this.props.title}/>
+          <div className='player'>
+            {/* <div className='info'>
+              <div className='singer'>{this.props.title}</div>
+            </div> */}
+            <div className='btns'>
+              <img className='play-pause' onClick={this.playHandler} src={this.state.src} alt='play or pause'/>
+            </div>
+            {/* <div className='progress' /> */}
           </div>
-          <div class='btns'>
-            <div class='iconfont play-pause icon-play' onClick={this.playHander}/>
-          </div>
-          <div class='progress' />
         </div>
       </React.Fragment>
     )

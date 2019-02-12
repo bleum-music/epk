@@ -77,19 +77,18 @@ class App extends React.Component {
         </div>
         <div id='music'>
           <div className='spacer' />
-          <div>singles</div>
+          <div className='title'>music</div>
           <div className='singles'>
-            <Song graphic={ignoredYouGraphic} song={ignoredYou} title='ignored you' />
-            <Song graphic={isItLoveGraphic} song={isItLove} title='is it love' />
-            <Song graphic={moveWithMeGraphic} song={moveWithMe} title='move with me' />
+            <Song graphic={ignoredYouGraphic} song={ignoredYou} title='ignored you' id='ignore' index='0' />
+            <Song graphic={isItLoveGraphic} song={isItLove} title='is it love' id='isIt' index='1' />
+            <Song graphic={moveWithMeGraphic} song={moveWithMe} title='move with me' id='move' index='2' />
           </div>
-          <iframe 
-              width='400'
-              height='300'
+          <iframe
+              title='bleum live'
               src='https://www.youtube.com/embed/Vrg7yaniKn4'
-              frameborder='0'
+              frameBorder='0'
               allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-              allowfullscreen>
+              allowFullScreen>
           </iframe>
         </div>
         <div id='social'>

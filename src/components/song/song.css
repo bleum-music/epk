@@ -1,77 +1,75 @@
+.songContainer {
+    height: 260px;
+    width: 260px;
+    position: relative
+}
+
+.songContainer img {
+    height: 100%;
+    width: 100%
+}
+
 .player {
-    position: relative;
-    width: 500px;
-    height: 60px;
-    background-color: rgba(0,0,0,0.2);
-    display: flex;
-    border-radius: 2px;
-    padding: 5 16px;
-}
-img {
-    margin-top: 5px;
-    width: 60px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 50px;
     height: 50px;
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    /* padding: 5 16px; */
+    transform: translate(-50%,50%);
+    z-index: 2
 }
-.info {
+/* .info {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    width: 50%;
-    padding: 0 16px;
-}
-.name {
-    font-size: 15px;
-    font-weight: 700;
-}
-.singer {
-    font-size: 12px;
-}
-.btns {
-    width: 50%;
+    justify-content: center ;
+    width: 66%;
+    height: 100%
+} */
+/* .singer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 16px;
-}  
-div:nth-child(1) {font-size: 30px;}
-div:nth-child(2), div:nth-child(3) {font-size: 18px;}
-.progress {
-    position: absolute;
-    height: 2px;
-    left: 0;
-    top: 0;
-    background-color: #00a8ff;
+    font-size: 20px;
+    height: 100%
+} */
+.btns {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
-.iconfont {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}  
-.icon-list:before {content: "\e603"}
-.icon-loop-single:before {content: "\e604"}      
-.icon-arrow-right:before {content: "\e605"}
-.icon-loop:before {content: "\e606"}      
-.icon-prev:before {content: "\e607"}
-.icon-favor:before {content: "\e608"}
-.icon-download:before {content: "\e60b"}
-.icon-search:before {content: "\e60c"}
-.icon-zhanwei1:before {content: "\e610"}
-.icon-favor1:before {content: "\e618"}
-.icon-random:before {content: "\e619"}
-.icon-play:before {content: "\e616"}
-.icon-stop:before {content: "\e617"}
-.icon-mv:before {content: "\e61b"}
-.icon-arrow-down:before {content: "\e61d"}
-.icon-arrow-left:before {content: "\e61e"}
-.icon-arrow-up:before {content: "\e61f"}
-.icon-listen:before {content: "\e609"}
-.icon-round:before {content: "\e60d"}
-.icon-triangle:before {content: "\e60e"}
-.icon-information:before {content: "\e60f"}
-.icon-home:before {content: "\e611"}
-.icon-i:before {content: "\e612"}
-.icon-information-:before {content: "\e613"}
-.icon-bubble-filled-icon:before {content: "\e614"}
-.icon-round-right:before {content: "\e615"}
-.icon-vip:before {content: "\e61a"}
-.icon-word:before {content: "\e61c"}
+/* .progress {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.4);
+} */
+.play-pause {
+    height: 100% !important;
+    width: auto
+}
+
+@media only screen and (max-width: 1000px) {
+    .songContainer {
+        height: 200px;
+        width: 200px
+    }
+}
+@media only screen and (max-width: 775px) {
+    .songContainer {
+        height: 150px;
+        width: 150px
+    }
+}
+@media only screen and (max-width: 500px) {
+    .songContainer {
+        height: 100px;
+        width: 100px
+    }
+}
