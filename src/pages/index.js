@@ -63,7 +63,7 @@ class App extends React.Component {
         <div id='aboutus' className={isLoaded}>
           <div id='banner'>
             {logoPlaceHolder}
-            <img src={aboutUs} alt='brittany and daniel sitting together' />
+            <img src={aboutUs} alt='banner graphic' />
           </div>
           <div className='spacer' />
           <p>Bleum is an electronic music duo consisting of producer Daniel James
