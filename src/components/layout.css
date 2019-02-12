@@ -117,6 +117,7 @@ iframe {
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}
 
 @media only screen and (min-width: 1300px) {
+    body {max-width: 1600px}
     #aboutus, #social, #music, #contact {width: 80vw}
     #banner {
         width: 75%;
