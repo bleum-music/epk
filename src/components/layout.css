@@ -34,8 +34,8 @@ body {
 
 #banner {
     position: relative;
-    width: 96%;
-    height: 33.75vw;
+    display: flex;
+    align-self: center;
     margin-bottom: 10px;
     background-color: rgb(56,182,255)
 }
@@ -99,7 +99,7 @@ body {
 iframe {
     width: 100%;
     margin: 0 auto;
-    min-height: 100% !important
+    min-height: 80% !important
 }
 
 #contact p {
@@ -118,13 +118,18 @@ iframe {
 
 @media only screen and (min-width: 1300px) {
     #aboutus, #social, #music, #contact {width: 80vw}
-    #banner {height: 45vw}
+    #banner {
+        width: 75%;
+        height: 33.75vw;
+        margin: 0 auto
+    }
     #banner .logo {width: 300px !important}
 }
 @media only screen and (max-width: 1300px) {
     #aboutus, #social, #music, #contact {width: 70vw}
     #banner {height: 39.4vw}
     #banner .logo {width: 250px !important}
+    iframe {min-height: 60% !important}
 }
 @media only screen and (max-width: 1150px) {
     #banner .logo {width: 210px !important}
@@ -133,11 +138,13 @@ iframe {
     #aboutus, #social, #music, #contact {width: 80vw}
     #banner {height: 45vw}
     #banner .logo {width: 175px !important}
+    iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
     #aboutus, #social, #music, #contact {width: 90vw}
     #banner {height: 50.6vw}
     #banner .logo {width: 150px !important}
+    iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 400px) {
     #aboutus, #social, #music, #contact {width: 95vw}
