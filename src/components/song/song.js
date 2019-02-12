@@ -8,10 +8,14 @@ class Song extends React.Component {
     src: play
   }
 
-  playHandler = () => {
+  playHandler = progressClass => () => {
     var aud = document.getElementById(this.props.id)
     // var playB = document.getElementsByClassName('play-pause')[Number(this.props.index)]
-    var progress = document.getElementsByClassName('progress')[Number(this.props.index)]
+    if (progressClass === 'black') {
+      var progress = document.getElementsByClassName(progressClass)[Number(this.props.index)]
+    } else {
+      var progress = document.getElementsByClassName(progressClass)[0]
+    }
 
     if (aud.paused) {
       aud.play()
@@ -31,7 +35,7 @@ class Song extends React.Component {
     return (
       <React.Fragment>
         <audio id={this.props.id} src={this.props.song}>browser doesn't support audio</audio>
-        <div className='songContainer' onClick={this.playHandler} >
+        <div className='songContainer' onClick={this.playHandler(progressClass)} >
           <img src={this.props.graphic} alt={this.props.title}/>
           <div className='player'>
             {/* <div className='info'>

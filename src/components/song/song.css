@@ -1,6 +1,6 @@
 .songContainer {
-    height: 30%;
-    width: 30%;
+    height: 30% !important;
+    width: 30% !important;
     position: relative
 }
 
