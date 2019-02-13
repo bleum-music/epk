@@ -14,7 +14,7 @@
 body {
     font-family: "gill_sans", sans-serif;
     color: black;
-    background-color: white;
+    background-color: rgb(56,182,255);
     height: min-content;
     width: 100vw
 }
@@ -36,8 +36,7 @@ body {
     position: relative;
     display: flex;
     align-self: center;
-    margin-bottom: 10px;
-    background-color: rgb(56,182,255)
+    margin-bottom: 10px
 }
 #banner img {
     width: 100% !important;
