@@ -29,28 +29,74 @@ body {
 }
 
 .spacer {height: 10px}
-.ready {position: static}
-.placeHolder {height: 100% !important}
 
 #banner {
-    position: relative;
-    display: flex;
-    align-self: center;
-    margin-bottom: 10px
+    width: 100%;
+    height: min-content;
+    margin-bottom: 10px;
+    position: relative
 }
 #banner img {
-    width: 100% !important;
-    height: 100% !important
+    width: 100%;
+    height: auto
 }
 #banner .logo {
     font-size: 24px;
     color: white;
-    height: auto !important;
+    height: 100%;
+    width: 100%
+}
+#banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
+    height: 200px;
+    width: auto;
     position: absolute;
+    transform: translate(-50%,0)
+}
+.logoPink {
+    z-index: 2;
+    top: 49.25%;
+    left: 50%;
+    animation: left 2s 1
+}
+.logoWhite {
+    z-index: 4;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2
+    animation: top 2s 1
+}
+.logoBlue {
+    z-index: 3;
+    top: 50.75%;
+    left: 50%;
+    animation: right 2s 1
+}
+@keyframes left {
+    from {
+        transform: translate(-100vw,0) rotate(-360deg)
+    }
+    to {
+        transform: translate(-50%,0) rotate(0deg)
+    }
+}
+@keyframes right {
+    from {
+        transform: translate(100vw,0) rotate(-360deg)
+    }
+    to {
+        transform: translate(-50%,0) rotate(0deg)
+    }
+}
+@keyframes top {
+    from {
+        transform: translate(-50%,-100vh) rotate(-360deg)
+    }
+    to {
+        transform: translate(-50%,0) rotate(0deg)
+    }
+}
+#aboutus .svg {
+    height: 100px;
+    width: 100%
 }
 
 #aboutus, #social, #music, #contact {
@@ -78,11 +124,6 @@ body {
     padding-left: 20px
 }
 #social img, #contact img {
-    width: 100%;
-    height: auto;
-    margin: 0 auto 10px auto
-}
-#aboutus div img {
     width: 100%;
     height: auto;
     margin: 0 auto 10px auto
@@ -115,7 +156,7 @@ iframe {
 
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}
 
-@media only screen and (min-width: 1300px) {
+/* @media only screen and (min-width: 1300px) {
     body {max-width: 1600px}
     #aboutus, #social, #music, #contact {width: 80vw}
     #banner {
@@ -150,4 +191,4 @@ iframe {
     #aboutus, #social, #music, #contact {width: 95vw}
     #banner {height: 53.4vw}
     #banner .logo {width: 125px !important}
-}
+} */

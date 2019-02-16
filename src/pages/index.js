@@ -8,10 +8,13 @@ import daniel from '../images/good_2.jpg'
 import light_daniel from '../images/light_2.jpg'
 import brittany from '../images/good_3.jpg'
 import light_brittany from '../images/light_3.jpg'
-import logo from '../components/logo.png'
+import logo_blue from '../images/logo_blue.png'
+import logo_pink from '../images/logo_pink.png'
+import logo_white from '../images/logo_white.png'
 import ignoredYouGraphic from '../images/ignoredyou.png'
 import isItLoveGraphic from '../images/isitlove.png'
 import moveWithMeGraphic from '../images/movewithme.png'
+import Arrow from '../components/arrow/arrow.js'
 // import ignoredYou from './ignoredyou.mp3'
 // import isItLove from './isitlove.mp3'
 // import moveWithMe from './movewithme.mp3'
@@ -23,7 +26,6 @@ const moveWithMe = test
 
 class App extends React.Component {
   state = {
-    isLoaded: false,
     loadFirst: false,
     loadSecond: false,
     loadThird: false,
@@ -31,12 +33,12 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    const logoLoad = new Image()
-    logoLoad.src = logo
-    logoLoad.onload = () => {this.setState({logoLoaded: true})}
+    const logoPinkLoad = new Image()
+    logoPinkLoad.src = logo_pink
+    logoPinkLoad.onload = () => {this.setState({logoLoaded: true})}
     const first = new Image()
     first.src = portrait
-    first.onload = () => {this.setState({loadFirst: true, isLoaded: true})}
+    first.onload = () => {this.setState({loadFirst: true})}
     const second = new Image()
     second.src = daniel
     second.onload = () => {this.setState({loadSecond: true})}
@@ -46,10 +48,12 @@ class App extends React.Component {
   }
 
   render () {
-    let isLoaded = this.state.isLoaded ? 'ready' : 'placeHolder'
-
-    let logoPlaceHolder = <div className='logo'>bleum</div>
-    if(this.state.logoLoaded){logoPlaceHolder = <img className='logo' src={logo} alt='brand logo'/>}
+    let logoPlaceHolder = <div className='logo'>loading...</div>
+    if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
+      <img className='logoPink' src={logo_pink} alt='brand logo'/>
+      <img className='logoWhite' src={logo_white} alt='brand logo'/>
+      <img className='logoBlue' src={logo_blue} alt='brand logo'/>
+    </div>}
 
     const aboutUs = 
     this.state.loadFirst ? portrait : light_portrait
@@ -60,12 +64,14 @@ class App extends React.Component {
 
     return (
       <div className='App'>
-        <div id='aboutus' className={isLoaded}>
+        <div id='aboutus'>
           <div id='banner'>
             {logoPlaceHolder}
             <img src={aboutUs} alt='banner graphic' />
           </div>
-          <div className='spacer' />
+          <div className='svg'>
+            <Arrow />
+          </div>
           <p>Bleum is an electronic music duo consisting of producer Daniel James
           and singer/ songwriter Brittany McQuinn. They began working together in
           2016 after Daniel saw Brittany perform live. Impressed by her pop sensibility,

@@ -14,7 +14,7 @@ class Song extends React.Component {
     if (progressClass === 'black') {
       var progress = document.getElementsByClassName(progressClass)[Number(this.props.index)]
     } else {
-      var progress = document.getElementsByClassName(progressClass)[0]
+      progress = document.getElementsByClassName(progressClass)[0]
     }
 
     if (aud.paused) {
