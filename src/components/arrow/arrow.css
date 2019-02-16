@@ -1,0 +1,142 @@
+.firstLine {
+    stroke-dasharray: 183;
+    stroke-dashoffset: 0;
+    animation: first 3s linear infinite
+}
+.secondLine {
+    stroke-dasharray: 43;
+    stroke-dashoffset: 0;
+    animation: second 3s linear infinite
+}
+.thirdLine {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+    animation: third 3s linear infinite
+}
+.fourthLine {
+    stroke-dasharray: 33;
+    stroke-dashoffset: 0;
+    animation: fourth 3s linear infinite
+}
+.fifthLine {
+    stroke-dasharray: 33;
+    stroke-dashoffset: 0;
+    animation: fifth 3s linear infinite
+}
+.sixthLine {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+    animation: sixth 3s linear infinite
+}
+
+@keyframes first {
+    0% {
+        stroke-dashoffset: 183;
+        opacity: 1
+    }
+    12.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+@keyframes second {
+    0% {
+        stroke-dashoffset: 43;
+        opacity: 1
+    }
+    12.5% {
+        stroke-dashoffset: 43
+    }
+    17.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+@keyframes third {
+    0% {
+        stroke-dashoffset: 20;
+        opacity: 1
+    }
+    17.5% {
+        stroke-dashoffset: 20
+    }
+    22.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+@keyframes fourth {
+    0% {
+        stroke-dashoffset: -33;
+        opacity: 1
+    }
+    22.5% {
+        stroke-dashoffset: -33
+    }
+    27.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+@keyframes fifth {
+    0% {
+        stroke-dashoffset: 33;
+        opacity: 1
+    }
+    27.5% {
+        stroke-dashoffset: 33
+    }
+    32.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}
+@keyframes sixth {
+    0% {
+        stroke-dashoffset: 20;
+        opacity: 1
+    }
+    32.5% {
+        stroke-dashoffset: 20
+    }
+    37.5% {
+        stroke-dashoffset: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0
+    }
+}

@@ -56,19 +56,19 @@ body {
     z-index: 2;
     top: 49.25%;
     left: 50%;
-    animation: left 2s 1
+    animation: left 2s infinite
 }
 .logoWhite {
     z-index: 4;
     top: 50%;
     left: 50%;
-    animation: top 2s 1
+    animation: top 2s infinite
 }
 .logoBlue {
     z-index: 3;
     top: 50.75%;
     left: 50%;
-    animation: right 2s 1
+    animation: right 2s infinite
 }
 @keyframes left {
     from {
