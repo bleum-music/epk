@@ -14,7 +14,7 @@
 body {
     font-family: "gill_sans", sans-serif;
     color: black;
-    background-color: rgb(56,182,255);
+    background-color: rgb(256,256,256);/*rgb(56,182,255);*/
     height: min-content;
     width: 100vw
 }
@@ -32,58 +32,59 @@ body {
 
 #banner {
     width: 100%;
-    height: min-content;
+    height: 85vh;
     margin-bottom: 10px;
     position: relative
 }
-#banner img {
+/* #banner img {
     width: 100%;
     height: auto
-}
+} */
 #banner .logo {
-    font-size: 24px;
+    font-size: 48px;
     color: white;
     height: 100%;
-    width: 100%
+    width: 100%;
+    margin: 0
 }
 #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 80%;
     position: absolute;
-    transform: translate(-50%,0)
+    transform: translate(-50%,-40%)
 }
 .logoPink {
     z-index: 2;
     top: 49.25%;
     left: 50%;
-    animation: left 2s infinite
+    animation: left 10s 1
 }
 .logoWhite {
     z-index: 4;
     top: 50%;
     left: 50%;
-    animation: top 2s infinite
+    animation: top 10s 1
 }
 .logoBlue {
     z-index: 3;
     top: 50.75%;
     left: 50%;
-    animation: right 2s infinite
+    animation: right 10s 1
 }
 @keyframes left {
     from {
-        transform: translate(-100vw,0) rotate(-360deg)
+        transform: translate(-100vw,-40%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,0) rotate(0deg)
+        transform: translate(-50%,-40%) rotate(0deg)
     }
 }
 @keyframes right {
     from {
-        transform: translate(100vw,0) rotate(-360deg)
+        transform: translate(100vw,-40%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,0) rotate(0deg)
+        transform: translate(-50%,-40%) rotate(0deg)
     }
 }
 @keyframes top {
@@ -91,11 +92,11 @@ body {
         transform: translate(-50%,-100vh) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,0) rotate(0deg)
+        transform: translate(-50%,-40%) rotate(0deg)
     }
 }
 #aboutus .svg {
-    height: 100px;
+    height: 15vh;
     width: 100%
 }
 
@@ -156,20 +157,12 @@ iframe {
 
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}
 
-/* @media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1300px) {
     body {max-width: 1600px}
     #aboutus, #social, #music, #contact {width: 80vw}
-    #banner {
-        width: 75%;
-        height: 33.75vw;
-        margin: 0 auto
-    }
-    #banner .logo {width: 300px !important}
 }
 @media only screen and (max-width: 1300px) {
     #aboutus, #social, #music, #contact {width: 70vw}
-    #banner {height: 39.4vw}
-    #banner .logo {width: 250px !important}
     iframe {min-height: 60% !important}
 }
 @media only screen and (max-width: 1150px) {
@@ -177,18 +170,12 @@ iframe {
 }
 @media only screen and (max-width: 1000px) {
     #aboutus, #social, #music, #contact {width: 80vw}
-    #banner {height: 45vw}
-    #banner .logo {width: 175px !important}
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
     #aboutus, #social, #music, #contact {width: 90vw}
-    #banner {height: 50.6vw}
-    #banner .logo {width: 150px !important}
     iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 400px) {
     #aboutus, #social, #music, #contact {width: 95vw}
-    #banner {height: 53.4vw}
-    #banner .logo {width: 125px !important}
-} */
+}

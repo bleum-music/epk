@@ -67,7 +67,7 @@ class App extends React.Component {
         <div id='aboutus'>
           <div id='banner'>
             {logoPlaceHolder}
-            <img src={aboutUs} alt='banner graphic' />
+            {/* <img src={aboutUs} alt='banner graphic' /> */}
           </div>
           <div className='svg'>
             <Arrow />

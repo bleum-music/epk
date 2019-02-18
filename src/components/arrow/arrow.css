@@ -1,32 +1,32 @@
 .firstLine {
     stroke-dasharray: 183;
     stroke-dashoffset: 0;
-    animation: first 3s linear infinite
+    animation: first 2s linear infinite
 }
 .secondLine {
     stroke-dasharray: 43;
     stroke-dashoffset: 0;
-    animation: second 3s linear infinite
+    animation: second 2s linear infinite
 }
 .thirdLine {
     stroke-dasharray: 20;
     stroke-dashoffset: 0;
-    animation: third 3s linear infinite
+    animation: third 2s linear infinite
 }
 .fourthLine {
     stroke-dasharray: 33;
     stroke-dashoffset: 0;
-    animation: fourth 3s linear infinite
+    animation: fourth 2s linear infinite
 }
 .fifthLine {
     stroke-dasharray: 33;
     stroke-dashoffset: 0;
-    animation: fifth 3s linear infinite
+    animation: fifth 2s linear infinite
 }
 .sixthLine {
     stroke-dasharray: 20;
     stroke-dashoffset: 0;
-    animation: sixth 3s linear infinite
+    animation: sixth 2s linear infinite
 }
 
 @keyframes first {
