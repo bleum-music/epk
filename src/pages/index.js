@@ -2,8 +2,8 @@ import React from 'react'
 import '../components/layout.css'
 import Social from '../components/social/social'
 import Song from '../components/song/song'
-import portrait from '../images/banner.jpg'
-import light_portrait from '../images/banner_light.jpg'
+// import portrait from '../images/banner.jpg'
+// import light_portrait from '../images/banner_light.jpg'
 import daniel from '../images/good_2.jpg'
 import light_daniel from '../images/light_2.jpg'
 import brittany from '../images/good_3.jpg'
@@ -26,7 +26,7 @@ const moveWithMe = test
 
 class App extends React.Component {
   state = {
-    loadFirst: false,
+    // loadFirst: false,
     loadSecond: false,
     loadThird: false,
     logoLoaded: false
@@ -36,9 +36,9 @@ class App extends React.Component {
     const logoPinkLoad = new Image()
     logoPinkLoad.src = logo_pink
     logoPinkLoad.onload = () => {this.setState({logoLoaded: true})}
-    const first = new Image()
-    first.src = portrait
-    first.onload = () => {this.setState({loadFirst: true})}
+    // const first = new Image()
+    // first.src = portrait
+    // first.onload = () => {this.setState({loadFirst: true})}
     const second = new Image()
     second.src = daniel
     second.onload = () => {this.setState({loadSecond: true})}
@@ -48,15 +48,53 @@ class App extends React.Component {
   }
 
   render () {
-    let logoPlaceHolder = <div className='logo'>loading...</div>
-    if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
-      <img className='logoPink' src={logo_pink} alt='brand logo'/>
+    // let logoPlaceHolder = <div className='logo'>loading...</div>
+    // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
+    const logoPlaceHolder = <div className='hiddenLogo'>
+      <img id='start' className='logoPink' src={logo_pink} alt='brand logo'/>
       <img className='logoWhite' src={logo_white} alt='brand logo'/>
       <img className='logoBlue' src={logo_blue} alt='brand logo'/>
-    </div>}
+    </div>
 
-    const aboutUs = 
-    this.state.loadFirst ? portrait : light_portrait
+    // animateHTML taken from: https://eddyerburgh.me/animate-elements-scrolled-view-vanilla-js
+    var animateHTML = () => {
+      var elems
+      var start
+      var svg
+      var windowHeight
+      const init = () => {
+        elems = document.querySelectorAll('.hiddenLogo')
+        start = document.getElementById('start')
+        svg = document.getElementById('svg')
+        windowHeight = window.innerHeight
+        addEventHandlers()
+        checkPosition()
+      }
+      const addEventHandlers = () => {
+        window.addEventListener('scroll', checkPosition)
+        window.addEventListener('resize', init)
+      }
+      const checkPosition = () => {
+        for (var i = 0; i < elems.length; i++) {
+          var positionFromTop = start.getBoundingClientRect().bottom
+          console.log('positionFromTop: ', positionFromTop)
+          console.log('windowHeight*0.5: ', windowHeight*0.5)
+
+          while (positionFromTop <= windowHeight*0.5) {
+            elems[i].className = elems[i].className.replace(
+              'hiddenLogo',
+              'logo'
+            )
+            svg.style.opacity = '0'
+          }
+        }
+      }
+      return {
+        init: init
+      }
+    }
+    animateHTML().init()
+
     const social = 
     this.state.loadSecond ? daniel : light_daniel
     const contact = 
@@ -69,10 +107,10 @@ class App extends React.Component {
             {logoPlaceHolder}
             {/* <img src={aboutUs} alt='banner graphic' /> */}
           </div>
-          <div className='svg'>
+          <div id='svg'>
             <Arrow />
           </div>
-          <p>Bleum is an electronic music duo consisting of producer Daniel James
+          <p id='bio'>Bleum is an electronic music duo consisting of producer Daniel James
           and singer/ songwriter Brittany McQuinn. They began working together in
           2016 after Daniel saw Brittany perform live. Impressed by her pop sensibility,
           he urged her to send him some vocal tracks.</p>

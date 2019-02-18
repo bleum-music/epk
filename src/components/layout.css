@@ -28,6 +28,11 @@ body {
     align-items: center
 }
 
+.hiddenLogo {
+    opacity: 0;
+    height: 100%;
+    width: 100%
+}
 .spacer {height: 10px}
 
 #banner {
@@ -95,7 +100,7 @@ body {
         transform: translate(-50%,-40%) rotate(0deg)
     }
 }
-#aboutus .svg {
+#aboutus #svg {
     height: 15vh;
     width: 100%
 }
