@@ -300,7 +300,7 @@ iframe {
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
-    #banner {height: 70vh}
+    #banner {height: 80vh}
     #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
         transform: translate(-50%,0)
     }
@@ -323,7 +323,7 @@ iframe {
             transform: translate(-100vw,-100vh) rotate(-360deg)
         }
         to {
-            transform: translate(-50%,50%) rotate(0deg)
+            transform: translate(-50%,0) rotate(0deg)
         }
     }
     @keyframes right {
@@ -331,7 +331,7 @@ iframe {
             transform: translate(100vw,-100vh) rotate(-360deg)
         }
         to {
-            transform: translate(-50%,50%) rotate(0deg)
+            transform: translate(-50%,0) rotate(0deg)
         }
     }
     @keyframes top {
@@ -339,12 +339,13 @@ iframe {
             transform: translate(-50%,-100vh) rotate(-360deg)
         }
         to {
-            transform: translate(-50%,50%) rotate(0deg)
+            transform: translate(-50%,0) rotate(0deg)
         }
     }
     #aboutus, #social, #music, #contact {width: 90vw}
     iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 400px) {
+    #banner {height: 74vh}
     #aboutus, #social, #music, #contact {width: 95vw}
 }
