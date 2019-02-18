@@ -1,11 +1,9 @@
 .songContainer {
-    height: 30%;
     width: 30%;
     position: relative
 }
 
 .songContainer img {
-    height: 100%;
     width: 100%
 }
 

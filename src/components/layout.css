@@ -121,24 +121,61 @@ body {
 }
 #aboutus p, #social p, #contact p {
     line-height: 1.5;
-    font-size: 20px
+    font-size: 20px;
+    text-align: left
 }
 #aboutus p {
     border-left: 4px solid black;
     padding-left: 20px
 }
-.bioAnimate {animation: bioFadeIn 2s 1}
+.bio {animation: bioFadeIn 2s 1}
 
 @keyframes bioFadeIn {
     from {opacity: 0}
     to {opacity: 1}
 }
 
+.songs {animation: songs 1s 1}
+@keyframes songs {
+    from {
+        transform: translate(-100vw,0);
+        opacity: 0
+    } to {
+        opacity: 1;
+        transform: translate(0,0)
+    }
+}
 
 #social img, #contact img {
     width: 100%;
     height: auto;
     margin: 0 auto 10px auto
+}
+.image {animation: dan 1s 1}
+@keyframes dan {
+    from {
+        opacity: 0;
+        width: 50%;
+        transform: rotate(-22.5deg)
+    }
+    to {
+        opacity: 1;
+        width: 100%;
+        transform: rotate(0deg)
+    }
+}
+.imageVV {animation: britt 1s 1}
+@keyframes britt {
+    from {
+        opacity: 0;
+        width: 50%;
+        transform: rotate(22.5deg)
+    }
+    to {
+        opacity: 1;
+        width: 100%;
+        transform: rotate(0deg)
+    }
 }
 
 #music .singles {
@@ -152,6 +189,17 @@ iframe {
     width: 100%;
     margin: 0 auto;
     min-height: 80% !important
+}
+.video {animation: video 1s 1}
+@keyframes video {
+    from {
+        opacity: 0;
+        transform: translate(100vw, 0)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0)
+    }
 }
 
 #contact p {
@@ -167,6 +215,74 @@ iframe {
 }
 
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}
+
+#socialIcons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 55vw;
+    margin: 0 auto !important
+}
+
+.links:hover, #buyDiv:hover {
+    background-color: rgba(0,0,0,0.3)
+}
+
+#socialIcons .links {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialIcons .links a, #socialIcons .links a img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    margin: 0
+}
+
+#buyDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px !important;
+    width: 80px !important;
+}
+#buy {
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px
+}
+#buy p {
+    height: 20px;
+    text-align: center;
+    color: black
+}
+.faceAnimate {animation: socialIcon 1s 1}
+.instaAnimate {animation: socialIcon 1.5s 1}
+.buyAnimate {animation: socialIcon 2s 1}
+@keyframes socialIcon {
+    from {
+        transform: translate(100vw,0) rotate(1080deg);
+        opacity: 0
+    }
+    to {
+        transform: translate(0,0) rotate(0deg);
+        opacity: 1
+    }
+}
+.mail {animation: mail 1s 1}
+@keyframes mail {
+    from {transform: translate(0,-30px)}
+    to {transform: translate(0,0)}
+}
 
 @media only screen and (min-width: 1300px) {
     body {max-width: 1600px}
@@ -187,6 +303,20 @@ iframe {
     #banner {height: 81vh}
     #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
         transform: translate(-50%,50%)
+    }
+    #socialIcons {width: 90vw}
+    #socialIcons .links {
+        height: 60px;
+        width: 60px;
+    }
+    #buyDiv {
+        height: 60px !important;
+        width: 60px !important;
+    }
+    #buy p {
+        height: 20px;
+        text-align: center;
+        color: black
     }
     @keyframes left {
         from {
