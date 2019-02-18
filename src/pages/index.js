@@ -48,28 +48,30 @@ class App extends React.Component {
   }
 
   nullHandler = (id, classN) => {
-    if(document === undefined){
-      return
-    } else if(document.getElementById(id) !== null) {
-      this.animate(id, classN).init()
-    } else return
+    if(document){
+      if(document.getElementById(id) !== null) {
+        this.animate(id, classN).init()
+      } else {
+        return
+      }
+    }
   }
   animate = (id, classN) => {
     var target
     var windowHeight
     const init = () => {
       target = document.getElementById(id)
-      if (window===undefined){
-        return
-      } else {
+      if (window) {
         windowHeight = window.innerHeight
       }
       addEventHandlers()
       checkPosition()
     }
     const addEventHandlers = () => {
-      window.addEventListener('scroll', checkPosition)
-      window.addEventListener('resize', init)
+      if (window) {
+        window.addEventListener('scroll', checkPosition)
+        window.addEventListener('resize', init)
+      }
     }
     const checkPosition = () => {
       var distanceFromTop = target.getBoundingClientRect().top
@@ -104,13 +106,17 @@ class App extends React.Component {
         logoWhite = document.getElementById('logoWhite')
         logoBlue = document.getElementById('logoBlue')
         svg = document.getElementById('svg')
-        windowHeight = window.innerHeight
+        if (window) {
+          windowHeight = window.innerHeight
+        }
         addEventHandlers()
         checkPosition()
       }
       const addEventHandlers = () => {
-        window.addEventListener('scroll', checkPosition)
-        window.addEventListener('resize', init)
+        if (window) {
+          window.addEventListener('scroll', checkPosition)
+          window.addEventListener('resize', init)
+        }
       }
       const checkPosition = () => {
         var distanceFromTop = banner.getBoundingClientRect().top
@@ -140,9 +146,7 @@ class App extends React.Component {
         init: init
       }
     }
-    if (document === undefined){
-      return
-    } else {
+    if (document) {
       const banner = document.getElementById('banner')
       if(banner !== null) {
         animateLogo().init()
