@@ -48,7 +48,7 @@ class App extends React.Component {
   }
 
   nullHandler = (id, classN) => {
-    if(document){
+    if(typeof document !== 'undefined'){
       if(document.getElementById(id) !== null) {
         this.animate(id, classN).init()
       } else {
@@ -61,14 +61,14 @@ class App extends React.Component {
     var windowHeight
     const init = () => {
       target = document.getElementById(id)
-      if (window) {
+      if (typeof window !== 'undefined') {
         windowHeight = window.innerHeight
       }
       addEventHandlers()
       checkPosition()
     }
     const addEventHandlers = () => {
-      if (window) {
+      if (typeof window !== 'undefined') {
         window.addEventListener('scroll', checkPosition)
         window.addEventListener('resize', init)
       }
@@ -106,14 +106,14 @@ class App extends React.Component {
         logoWhite = document.getElementById('logoWhite')
         logoBlue = document.getElementById('logoBlue')
         svg = document.getElementById('svg')
-        if (window) {
+        if (typeof window !== 'undefined') {
           windowHeight = window.innerHeight
         }
         addEventHandlers()
         checkPosition()
       }
       const addEventHandlers = () => {
-        if (window) {
+        if (typeof window !== 'undefined') {
           window.addEventListener('scroll', checkPosition)
           window.addEventListener('resize', init)
         }
