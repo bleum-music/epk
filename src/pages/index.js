@@ -48,8 +48,11 @@ class App extends React.Component {
   }
 
   nullHandler = (id, classN) => {
-    if(document.getElementById(id) !== null) {
+    if(document === undefined){
+      return
+    } else if(document.getElementById(id) !== null) {
       this.animate(id, classN).init()
+    }
     }
   }
   animate = (id, classN) => {
@@ -58,9 +61,9 @@ class App extends React.Component {
     const init = () => {
       target = document.getElementById(id)
       if (window===undefined){
-      const window = new Object
+        return
       } else {
-      windowHeight = window.innerHeight
+        windowHeight = window.innerHeight
       }
       addEventHandlers()
       checkPosition()
