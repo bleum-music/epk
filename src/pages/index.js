@@ -146,7 +146,7 @@ class App extends React.Component {
         init: init
       }
     }
-    if (document !== undefined) {
+    if (typeof document !== undefined) {
       const banner = document.getElementById('banner')
       if(banner !== null) {
         animateLogo().init()
