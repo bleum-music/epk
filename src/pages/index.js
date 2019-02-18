@@ -52,7 +52,7 @@ class App extends React.Component {
       return
     } else if(document.getElementById(id) !== null) {
       this.animate(id, classN).init()
-    }
+    } else return
   }
   animate = (id, classN) => {
     var target
@@ -140,9 +140,13 @@ class App extends React.Component {
         init: init
       }
     }
-    const banner = document.getElementById('banner')
-    if(banner !== null) {
-      animateLogo().init()
+    if (document === undefined){
+      return
+    } else {
+      const banner = document.getElementById('banner')
+      if(banner !== null) {
+        animateLogo().init()
+      }
     }
     
     // let logoPlaceHolder = <div className='logo'>loading...</div>
