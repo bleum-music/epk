@@ -1,4 +1,5 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
 import '../components/layout.css'
 import facebook from '../images/facebook.png'
 import instagram from '../images/instagram.png'
@@ -168,6 +169,12 @@ class App extends React.Component {
 
     return (
       <div className='App'>
+        <Helmet>
+          <meta 
+            charSet='utf-8'
+            name='viewport'
+            content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' />
+        </Helmet>
         <div id='aboutus'>
           <div id='banner'>
             {logo}
