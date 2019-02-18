@@ -300,9 +300,9 @@ iframe {
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
-    #banner {height: 81vh}
+    #banner {height: 70vh}
     #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
-        transform: translate(-50%,50%)
+        transform: translate(-50%,0)
     }
     #socialIcons {width: 90vw}
     #socialIcons .links {
