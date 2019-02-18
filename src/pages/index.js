@@ -48,22 +48,19 @@ class App extends React.Component {
   }
 
   render () {
-    // let logoPlaceHolder = <div className='logo'>loading...</div>
-    // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
-    const logoPlaceHolder = <div id='logo' className='hiddenLogo'>
-      <img id='start' className='logoPink' src={logo_pink} alt='brand logo'/>
-      <img className='logoWhite' src={logo_white} alt='brand logo'/>
-      <img className='logoBlue' src={logo_blue} alt='brand logo'/>
-    </div>
-
-    // animateHTML taken from: https://eddyerburgh.me/animate-elements-scrolled-view-vanilla-js
-    var animateHTML = () => {
+    var animateLogo = () => {
       var target
       var banner
       var svg
+      var logoPink
+      var logoWhite
+      var logoBlue
       const init = () => {
         target = document.getElementById('logo')
         banner = document.getElementById('banner')
+        logoPink = document.getElementById('logoPink')
+        logoWhite = document.getElementById('logoWhite')
+        logoBlue = document.getElementById('logoBlue')
         svg = document.getElementById('svg')
         addEventHandlers()
         checkPosition()
@@ -73,19 +70,45 @@ class App extends React.Component {
         window.addEventListener('resize', init)
       }
       const checkPosition = () => {
-        if (banner.getBoundingClientRect().top < 0) {
+        var distanceFromTop = banner.getBoundingClientRect().top
+        if (distanceFromTop < 0) {
           target.className = target.className.replace(
             'hiddenLogo',
             'logo'
           )
+          logoPink.classList.add('logoPink')
+          logoWhite.classList.add('logoWhite')
+          logoBlue.classList.add('logoBlue')
           svg.style.opacity = '0'
+          svg.style.height = '0'
+        } else {
+          target.className = target.className.replace(
+            'logo',
+            'hiddenLogo'
+          )
+          logoPink.classList.remove('logoPink')
+          logoWhite.classList.remove('logoWhite')
+          logoBlue.classList.remove('logoBlue')
+          svg.style.opacity = '1'
+          svg.style.height = '100%'
         }
       }
       return {
         init: init
       }
     }
-    animateHTML().init()
+    const mounted = document.getElementById('banner')
+    if(mounted !== null) {
+      animateLogo().init()
+    }
+    
+    // let logoPlaceHolder = <div className='logo'>loading...</div>
+    // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
+    const logo = <div id='logo' className='hiddenLogo'>
+      <img id='logoPink' src={logo_pink} alt='brand logo'/>
+      <img id='logoWhite' src={logo_white} alt='brand logo'/>
+      <img id='logoBlue' src={logo_blue} alt='brand logo'/>
+    </div>
 
     const social = 
     this.state.loadSecond ? daniel : light_daniel
@@ -96,7 +119,7 @@ class App extends React.Component {
       <div className='App'>
         <div id='aboutus'>
           <div id='banner'>
-            {logoPlaceHolder}
+            {logo}
             {/* <img src={aboutUs} alt='banner graphic' /> */}
           </div>
           <div id='svg'>

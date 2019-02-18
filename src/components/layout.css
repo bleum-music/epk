@@ -28,11 +28,7 @@ body {
     align-items: center
 }
 
-.hiddenLogo {
-    opacity: 0;
-    height: 100%;
-    width: 100%
-}
+.hiddenLogo {opacity: 0}
 .spacer {height: 10px}
 
 #banner {
@@ -45,14 +41,16 @@ body {
     width: 100%;
     height: auto
 } */
-#banner .logo {
-    font-size: 48px;
-    color: white;
+#banner .logo, #banner .hiddenLogo {
     height: 100%;
     width: 100%;
     margin: 0
 }
+.App #aboutus #banner #logo img {
+    display: none
+}
 #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
+    display: unset !important;
     height: auto;
     width: 80%;
     position: absolute;
@@ -62,19 +60,19 @@ body {
     z-index: 2;
     top: 49.25%;
     left: 50%;
-    animation: left 10s 1
+    animation: left 1s 1
 }
 .logoWhite {
     z-index: 4;
     top: 50%;
     left: 50%;
-    animation: top 10s 1
+    animation: top 1s 1
 }
 .logoBlue {
     z-index: 3;
     top: 50.75%;
     left: 50%;
-    animation: right 10s 1
+    animation: right 1s 1
 }
 @keyframes left {
     from {
@@ -178,6 +176,34 @@ iframe {
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
+    #banner {height: 81vh}
+    #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
+        transform: translate(-50%,50%)
+    }
+    @keyframes left {
+        from {
+            transform: translate(-100vw,-100vh) rotate(-360deg)
+        }
+        to {
+            transform: translate(-50%,50%) rotate(0deg)
+        }
+    }
+    @keyframes right {
+        from {
+            transform: translate(100vw,-100vh) rotate(-360deg)
+        }
+        to {
+            transform: translate(-50%,50%) rotate(0deg)
+        }
+    }
+    @keyframes top {
+        from {
+            transform: translate(-50%,-100vh) rotate(-360deg)
+        }
+        to {
+            transform: translate(-50%,50%) rotate(0deg)
+        }
+    }
     #aboutus, #social, #music, #contact {width: 90vw}
     iframe {min-height: 30% !important}
 }
