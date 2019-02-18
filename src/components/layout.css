@@ -300,7 +300,7 @@ iframe {
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
-    #banner {height: 80vh}
+    #banner {height: 74vh}
     #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
         transform: translate(-50%,0)
     }
@@ -346,6 +346,6 @@ iframe {
     iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 400px) {
-    #banner {height: 74vh}
+    #banner {height: 70vh}
     #aboutus, #social, #music, #contact {width: 95vw}
 }
