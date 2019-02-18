@@ -55,6 +55,7 @@ class App extends React.Component {
       var logoPink
       var logoWhite
       var logoBlue
+      var bio
       const init = () => {
         target = document.getElementById('logo')
         banner = document.getElementById('banner')
@@ -62,6 +63,7 @@ class App extends React.Component {
         logoWhite = document.getElementById('logoWhite')
         logoBlue = document.getElementById('logoBlue')
         svg = document.getElementById('svg')
+        bio = Array.from(document.querySelectorAll('.bio'))
         addEventHandlers()
         checkPosition()
       }
@@ -73,22 +75,31 @@ class App extends React.Component {
         var distanceFromTop = banner.getBoundingClientRect().top
         if (distanceFromTop < 0) {
           target.className = target.className.replace(
-            'hiddenLogo',
+            'hidden',
             'logo'
           )
           logoPink.classList.add('logoPink')
           logoWhite.classList.add('logoWhite')
           logoBlue.classList.add('logoBlue')
+          bio.forEach(p => {
+            p.classList.add('bioAnimate')
+            p.classList.remove('hidden')
+          })
           svg.style.opacity = '0'
           svg.style.height = '0'
-        } else {
+        } 
+        else {
           target.className = target.className.replace(
             'logo',
-            'hiddenLogo'
+            'hidden'
           )
           logoPink.classList.remove('logoPink')
           logoWhite.classList.remove('logoWhite')
           logoBlue.classList.remove('logoBlue')
+          bio.forEach(p => {
+            p.classList.add('hidden')
+            p.classList.remove('bioAnimate')
+          })
           svg.style.opacity = '1'
           svg.style.height = '100%'
         }
@@ -104,7 +115,7 @@ class App extends React.Component {
     
     // let logoPlaceHolder = <div className='logo'>loading...</div>
     // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
-    const logo = <div id='logo' className='hiddenLogo'>
+    const logo = <div id='logo' className='hidden'>
       <img id='logoPink' src={logo_pink} alt='brand logo'/>
       <img id='logoWhite' src={logo_white} alt='brand logo'/>
       <img id='logoBlue' src={logo_blue} alt='brand logo'/>
@@ -125,11 +136,11 @@ class App extends React.Component {
           <div id='svg'>
             <Arrow />
           </div>
-          <p id='bio'>Bleum is an electronic music duo consisting of producer Daniel James
+          <p className='bio'>Bleum is an electronic music duo consisting of producer Daniel James
           and singer/ songwriter Brittany McQuinn. They began working together in
           2016 after Daniel saw Brittany perform live. Impressed by her pop sensibility,
           he urged her to send him some vocal tracks.</p>
-          <p>They haven't stopped making music since. After the release of Brittanyʼs
+          <p className='bio'>They haven't stopped making music since. After the release of Brittanyʼs
           solo EP, Bold (produced mostly by Daniel), they tried something untethered
           from each others individual identities. The first single 'Lose You' was released
           and Bleum was born. They've gone on to perform at multiple festivals. Their

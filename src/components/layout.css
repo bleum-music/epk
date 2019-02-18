@@ -28,7 +28,7 @@ body {
     align-items: center
 }
 
-.hiddenLogo {opacity: 0}
+.hidden {opacity: 0}
 .spacer {height: 10px}
 
 #banner {
@@ -54,7 +54,7 @@ body {
     height: auto;
     width: 80%;
     position: absolute;
-    transform: translate(-50%,-40%)
+    transform: translate(-50%,-20%)
 }
 .logoPink {
     z-index: 2;
@@ -79,7 +79,7 @@ body {
         transform: translate(-100vw,-40%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-40%) rotate(0deg)
+        transform: translate(-50%,-20%) rotate(0deg)
     }
 }
 @keyframes right {
@@ -87,7 +87,7 @@ body {
         transform: translate(100vw,-40%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-40%) rotate(0deg)
+        transform: translate(-50%,-20%) rotate(0deg)
     }
 }
 @keyframes top {
@@ -95,7 +95,7 @@ body {
         transform: translate(-50%,-100vh) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-40%) rotate(0deg)
+        transform: translate(-50%,-20%) rotate(0deg)
     }
 }
 #aboutus #svg {
@@ -127,6 +127,14 @@ body {
     border-left: 4px solid black;
     padding-left: 20px
 }
+.bioAnimate {animation: bioFadeIn 2s 1}
+
+@keyframes bioFadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
 #social img, #contact img {
     width: 100%;
     height: auto;
