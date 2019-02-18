@@ -57,7 +57,11 @@ class App extends React.Component {
     var windowHeight
     const init = () => {
       target = document.getElementById(id)
+      if (window===undefined){
+      const window = new Object
+      } else {
       windowHeight = window.innerHeight
+      }
       addEventHandlers()
       checkPosition()
     }
