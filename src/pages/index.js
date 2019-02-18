@@ -50,7 +50,7 @@ class App extends React.Component {
   render () {
     // let logoPlaceHolder = <div className='logo'>loading...</div>
     // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
-    const logoPlaceHolder = <div className='hiddenLogo'>
+    const logoPlaceHolder = <div id='logo' className='hiddenLogo'>
       <img id='start' className='logoPink' src={logo_pink} alt='brand logo'/>
       <img className='logoWhite' src={logo_white} alt='brand logo'/>
       <img className='logoBlue' src={logo_blue} alt='brand logo'/>
@@ -58,15 +58,13 @@ class App extends React.Component {
 
     // animateHTML taken from: https://eddyerburgh.me/animate-elements-scrolled-view-vanilla-js
     var animateHTML = () => {
-      var elems
-      var start
+      var target
+      var banner
       var svg
-      var windowHeight
       const init = () => {
-        elems = document.querySelectorAll('.hiddenLogo')
-        start = document.getElementById('start')
+        target = document.getElementById('logo')
+        banner = document.getElementById('banner')
         svg = document.getElementById('svg')
-        windowHeight = window.innerHeight
         addEventHandlers()
         checkPosition()
       }
@@ -75,18 +73,12 @@ class App extends React.Component {
         window.addEventListener('resize', init)
       }
       const checkPosition = () => {
-        for (var i = 0; i < elems.length; i++) {
-          var positionFromTop = start.getBoundingClientRect().bottom
-          console.log('positionFromTop: ', positionFromTop)
-          console.log('windowHeight*0.5: ', windowHeight*0.5)
-
-          while (positionFromTop <= windowHeight*0.5) {
-            elems[i].className = elems[i].className.replace(
-              'hiddenLogo',
-              'logo'
-            )
-            svg.style.opacity = '0'
-          }
+        if (banner.getBoundingClientRect().top < 0) {
+          target.className = target.className.replace(
+            'hiddenLogo',
+            'logo'
+          )
+          svg.style.opacity = '0'
         }
       }
       return {
