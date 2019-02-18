@@ -53,7 +53,6 @@ class App extends React.Component {
     } else if(document.getElementById(id) !== null) {
       this.animate(id, classN).init()
     }
-    }
   }
   animate = (id, classN) => {
     var target
