@@ -33,7 +33,7 @@ body {
 
 #banner {
     width: 100%;
-    height: 85vh;
+    height: 79vh;
     margin-bottom: 10px;
     position: relative
 }
@@ -52,42 +52,46 @@ body {
 #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
     display: unset !important;
     height: auto;
-    width: 80%;
-    position: absolute;
-    transform: translate(-50%,-20%)
+    width: 60%
 }
 .logoPink {
     z-index: 2;
-    top: 49.25%;
+    position: absolute;
+    top: 50%;
     left: 50%;
+    transform: translate(-50%,-41%);
     animation: left 1s 1
 }
 .logoWhite {
     z-index: 4;
+    position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%,-40%);
     animation: top 1s 1
 }
 .logoBlue {
     z-index: 3;
-    top: 50.75%;
+    position: absolute;
+    top: 50%;
     left: 50%;
+    transform: translate(-50%,-39%);
     animation: right 1s 1
 }
 @keyframes left {
     from {
-        transform: translate(-100vw,-40%) rotate(-360deg)
+        transform: translate(-100vw,-100%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-20%) rotate(0deg)
+        transform: translate(-50%,-41%) rotate(0deg)
     }
 }
 @keyframes right {
     from {
-        transform: translate(100vw,-40%) rotate(-360deg)
+        transform: translate(100vw,-100%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-20%) rotate(0deg)
+        transform: translate(-50%,-40%) rotate(0deg)
     }
 }
 @keyframes top {
@@ -95,7 +99,7 @@ body {
         transform: translate(-50%,-100vh) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-20%) rotate(0deg)
+        transform: translate(-50%,-39%) rotate(0deg)
     }
 }
 #aboutus #svg {

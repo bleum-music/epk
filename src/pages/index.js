@@ -133,7 +133,7 @@ class App extends React.Component {
         } 
         else if (distanceFromTop >= 0) {
           svg.style.opacity = '1'
-          svg.style.height = '100%'
+          svg.style.height = '15vh'
         }
         else {
           target.classList.add('hidden')
