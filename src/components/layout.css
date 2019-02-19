@@ -159,12 +159,10 @@ body {
 @keyframes dan {
     from {
         opacity: 0;
-        width: 50%;
         transform: rotate(-22.5deg)
     }
     to {
         opacity: 1;
-        width: 100%;
         transform: rotate(0deg)
     }
 }
@@ -172,12 +170,10 @@ body {
 @keyframes britt {
     from {
         opacity: 0;
-        width: 50%;
         transform: rotate(22.5deg)
     }
     to {
         opacity: 1;
-        width: 100%;
         transform: rotate(0deg)
     }
 }

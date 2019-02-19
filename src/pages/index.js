@@ -98,7 +98,6 @@ class App extends React.Component {
       var logoPink
       var logoWhite
       var logoBlue
-      var bio
       var windowHeight
       const init = () => {
         target = document.getElementById('logo')
