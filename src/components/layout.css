@@ -60,7 +60,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-41%);
+    transform: translate(-50%,-42%);
     animation: left 1s 1
 }
 .logoWhite {
@@ -76,7 +76,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-39%);
+    transform: translate(-50%,-38%);
     animation: right 1s 1
 }
 @keyframes left {
@@ -84,7 +84,7 @@ body {
         transform: translate(-100vw,-100%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-41%) rotate(0deg)
+        transform: translate(-50%,-42%) rotate(0deg)
     }
 }
 @keyframes right {
@@ -92,7 +92,7 @@ body {
         transform: translate(100vw,-100%) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-40%) rotate(0deg)
+        transform: translate(-50%,-38%) rotate(0deg)
     }
 }
 @keyframes top {
@@ -100,9 +100,15 @@ body {
         transform: translate(-50%,-100vh) rotate(-360deg)
     }
     to {
-        transform: translate(-50%,-39%) rotate(0deg)
+        transform: translate(-50%,-40%) rotate(0deg)
     }
 }
+
+#aboutTitle, #musicTitle, #contactTitle {
+    height: 50px;
+    width: auto
+}
+
 #aboutus #svg {
     height: 15vh;
     width: 100%
@@ -126,7 +132,7 @@ body {
 }
 #aboutus p, #social p, #contact p {
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 20px;
     text-align: left
 }
 #aboutus p {
@@ -151,11 +157,6 @@ body {
     }
 }
 
-#social img, #contact img {
-    width: 100%;
-    height: auto;
-    margin: 0 auto 10px auto
-}
 .image {animation: dan 1s 1}
 @keyframes dan {
     from {
@@ -167,8 +168,8 @@ body {
         transform: rotate(0deg)
     }
 }
-.imageVV {animation: britt 1s 1}
-@keyframes britt {
+/* .imageVV {animation: britt 1s 1} */
+/* @keyframes britt {
     from {
         opacity: 0;
         transform: rotate(22.5deg)
@@ -177,7 +178,7 @@ body {
         opacity: 1;
         transform: rotate(0deg)
     }
-}
+} */
 
 #music .singles {
     display: flex;
@@ -242,7 +243,8 @@ iframe {
     justify-content: center;
     width: 90%;
     height: 90%;
-    margin: 0
+    margin: 0;
+    padding: 0
 }
 
 #buyDiv {
@@ -261,7 +263,8 @@ iframe {
     padding-bottom: 10px
 }
 #buy p {
-    height: 20px;
+    height: 14px;
+    font-size: 12px;
     text-align: center;
     color: black
 }
@@ -278,11 +281,11 @@ iframe {
         opacity: 1
     }
 }
-.mail {animation: mail 1s 1}
+/* .mail {animation: mail 1s 1}
 @keyframes mail {
     from {transform: translate(0,-30px)}
     to {transform: translate(0,0)}
-}
+} */
 
 @media only screen and (min-width: 1300px) {
     body {max-width: 1600px}
@@ -302,8 +305,8 @@ iframe {
 @media only screen and (max-width: 700px) {
     #banner {height: 71vh}
     .logoWhite {transform: translate(-50%,0)}
-    .logoPink {transform: translate(-50%,-1.5%)}
-    .logoBlue {transform: translate(-50%,1.5%)}
+    .logoPink {transform: translate(-50%,-3%)}
+    .logoBlue {transform: translate(-50%,3%)}
     #socialIcons {width: 90vw}
     #socialIcons .links {
         height: 60px;
@@ -323,7 +326,7 @@ iframe {
             transform: translate(-100vw,-100vh) rotate(-360deg)
         }
         to {
-            transform: translate(-50%,0) rotate(0deg)
+            transform: translate(-50%,-3%) rotate(0deg)
         }
     }
     @keyframes right {
@@ -331,7 +334,7 @@ iframe {
             transform: translate(100vw,-100vh) rotate(-360deg)
         }
         to {
-            transform: translate(-50%,0) rotate(0deg)
+            transform: translate(-50%,3%) rotate(0deg)
         }
     }
     @keyframes top {

@@ -3,12 +3,15 @@ import {Helmet} from 'react-helmet'
 import '../components/layout.css'
 import facebook from '../images/facebook.png'
 import instagram from '../images/instagram.png'
-// import portrait from '../images/banner.jpg'
-// import light_portrait from '../images/banner_light.jpg'
-import daniel from '../images/good_2.jpg'
-import light_daniel from '../images/light_2.jpg'
-import brittany from '../images/good_3.jpg'
-import light_brittany from '../images/light_3.jpg'
+import portrait from '../images/good_0.jpg'
+import light_portrait from '../images/light_0.jpg'
+// import daniel from '../images/good_2.jpg'
+// import light_daniel from '../images/light_2.jpg'
+// import brittany from '../images/good_3.jpg'
+// import light_brittany from '../images/light_3.jpg'
+import aboutTitle from '../images/about.png'
+import musicTitle from '../images/music.png'
+import contactTitle from '../images/contact.png'
 import logo_blue from '../images/logo_blue.png'
 import logo_pink from '../images/logo_pink.png'
 import logo_white from '../images/logo_white.png'
@@ -17,19 +20,15 @@ import Song from '../components/song/song'
 import ignoredYouGraphic from '../images/ignoredyou.png'
 import isItLoveGraphic from '../images/isitlove.png'
 import moveWithMeGraphic from '../images/movewithme.png'
-// import ignoredYou from './ignoredyou.mp3'
-// import isItLove from './isitlove.mp3'
-// import moveWithMe from './movewithme.mp3'
-import test from '../newBeginningInst.m4a'
-const ignoredYou = test
-const isItLove = test
-const moveWithMe = test
+import ignoredYou from './ignoredyou.wav'
+import isItLove from './isitlove.wav'
+import moveWithMe from './movewithme.wav'
 
 class App extends React.Component {
   state = {
-    // loadFirst: false,
-    loadSecond: false,
-    loadThird: false,
+    loadFirst: false,
+    // loadSecond: false,
+    // loadThird: false,
     logoLoaded: false
   }
 
@@ -37,15 +36,15 @@ class App extends React.Component {
     const logoPinkLoad = new Image()
     logoPinkLoad.src = logo_pink
     logoPinkLoad.onload = () => {this.setState({logoLoaded: true})}
-    // const first = new Image()
-    // first.src = portrait
-    // first.onload = () => {this.setState({loadFirst: true})}
-    const second = new Image()
-    second.src = daniel
-    second.onload = () => {this.setState({loadSecond: true})}
-    const third = new Image()
-    third.src = brittany
-    third.onload = () => {this.setState({loadThird: true})}
+    const first = new Image()
+    first.src = portrait
+    first.onload = () => {this.setState({loadFirst: true})}
+    // const second = new Image()
+    // second.src = daniel
+    // second.onload = () => {this.setState({loadSecond: true})}
+    // const third = new Image()
+    // third.src = brittany
+    // third.onload = () => {this.setState({loadThird: true})}
   }
 
   nullHandler = (id, classN) => {
@@ -161,10 +160,11 @@ class App extends React.Component {
       <img id='logoBlue' src={logo_blue} alt='brand logo'/>
     </div>
 
-    const social = 
-    this.state.loadSecond ? daniel : light_daniel
-    const contact = 
-    this.state.loadThird ? brittany : light_brittany
+    const couch = this.state.loadFirst? portrait : light_portrait
+    // const social = 
+    // this.state.loadSecond ? daniel : light_daniel
+    // const contact = 
+    // this.state.loadThird ? brittany : light_brittany
 
     return (
       <div className='App'>
@@ -196,7 +196,7 @@ class App extends React.Component {
         </div>
         <div id='music'>
           <div className='spacer' />
-          <div className='title'>music</div>
+          <div className='title'><img id='musicTitle' src={musicTitle} alt='music heading'/></div>
           <div id='songs' className='singles' onLoad={this.nullHandler('songs','songs')}>
             <Song graphic={ignoredYouGraphic} song={ignoredYou} title='ignored you' id='ignore' index='0' />
             <Song graphic={isItLoveGraphic} song={isItLove} title='is it love' id='isIt' index='1' />
@@ -205,7 +205,7 @@ class App extends React.Component {
           <iframe
               id='iframe'
               title='bleum live'
-              src='https://www.youtube.com/embed/Vrg7yaniKn4'
+              src='https://www.youtube.com/embed/6T11XMhEWCI'
               frameBorder='0'
               allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
@@ -214,8 +214,9 @@ class App extends React.Component {
         </div>
         <div id='social'>
           <div className='spacer' />
-          <div>social media</div>
-          <img id='dan' src={social} alt='daniel' onLoad={this.nullHandler('dan','image')}/>
+          {/* <div><img id='aboutTitle' src={aboutTitle} alt='social media heading'/></div> */}
+          <div><img id='contactTitle' src={contactTitle} alt='contact heading'/></div>
+          <img id='dan' src={couch} alt='daniel and brittany' onLoad={this.nullHandler('dan','image')}/>
           <div id='socialIcons'>
             <div id='facebook' className='links' onLoad={this.nullHandler('facebook','faceAnimate')}>
               <a
@@ -245,9 +246,9 @@ class App extends React.Component {
           </div>
         </div>
         <div id='contact'>
-          <div className='spacer' />
-          <div>contact</div>
-          <img id='britt' src={contact} alt='brittany' onLoad={this.nullHandler('britt','imageVV')}/>
+          {/* <div className='spacer' /> */}
+          {/* <div><img id='contactTitle' src={contactTitle} alt='contact heading'/></div> */}
+          {/* <img id='britt' src={contact} alt='brittany' onLoad={this.nullHandler('britt','imageVV')}/> */}
           <p><a id='mail' href='mailto:bleum.music@gmail.com' target='_top' onLoad={this.nullHandler('mail','mail')}>bleum.music@gmail.com</a></p>
         </div>
       </div>
