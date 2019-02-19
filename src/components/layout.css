@@ -1,9 +1,9 @@
 * {margin: 0; padding: 0}
 
 @font-face {
-    font-family: "gill_sans";
+    font-family: "amiko-reg";
     font-display: swap;
-    src: url("./Gill_Sans_Light.ttf")
+    src: url("./Amiko-Regular.ttf")
 }
 
 ::-webkit-scrollbar {
@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: "gill_sans", sans-serif;
+    font-family: "amiko-reg", sans-serif;
     color: black;
     background-color: rgb(256,256,256);/*rgb(56,182,255);*/
     height: min-content;
