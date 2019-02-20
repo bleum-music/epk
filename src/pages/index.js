@@ -9,7 +9,7 @@ import light_portrait from '../images/light_0.jpg'
 // import light_daniel from '../images/light_2.jpg'
 // import brittany from '../images/good_3.jpg'
 // import light_brittany from '../images/light_3.jpg'
-import aboutTitle from '../images/about.png'
+// import aboutTitle from '../images/about.png'
 import musicTitle from '../images/music.png'
 import contactTitle from '../images/contact.png'
 import logo_blue from '../images/logo_blue.png'
@@ -45,6 +45,13 @@ class App extends React.Component {
     // const third = new Image()
     // third.src = brittany
     // third.onload = () => {this.setState({loadThird: true})}
+
+    if (typeof document !== 'undefined') {
+      const banner = document.getElementById('banner')
+      if(banner !== null) {
+        this.animateLogo().init()
+      }
+    }
   }
 
   nullHandler = (id, classN) => {
@@ -89,69 +96,66 @@ class App extends React.Component {
     }
   }
 
+  animateLogo = () => {
+    var target
+    var banner
+    var svg
+    var logoPink
+    var logoWhite
+    var logoBlue
+    var windowHeight
+    const init = () => {
+      target = document.getElementById('logo')
+      banner = document.getElementById('banner')
+      logoPink = document.getElementById('logoPink')
+      logoWhite = document.getElementById('logoWhite')
+      logoBlue = document.getElementById('logoBlue')
+      svg = document.getElementById('svg')
+      if (typeof window !== 'undefined') {
+        windowHeight = window.innerHeight
+      }
+      addEventHandlers()
+      checkPosition()
+    }
+    const addEventHandlers = () => {
+      if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', checkPosition)
+        window.addEventListener('resize', init)
+      }
+    }
+    const checkPosition = () => {
+      var distanceFromTop = banner.getBoundingClientRect().top
+      var distanceFromBottom = banner.getBoundingClientRect().bottom
+      // if (windowHeight - distanceFromTop > windowHeight && windowHeight + distanceFromBottom > windowHeight) {
+      if (windowHeight + distanceFromBottom < windowHeight && distanceFromBottom < 0) {
+        target.classList.add('hidden')
+        target.classList.remove('logo')
+        logoPink.classList.remove('logoPink')
+        logoWhite.classList.remove('logoWhite')
+        logoBlue.classList.remove('logoBlue')
+      } 
+      if (distanceFromTop < 0) {
+        svg.style.opacity = '0'
+        svg.style.height = '0'
+      }
+      if (distanceFromBottom > 0) {
+        target.classList.add('logo')
+        target.classList.remove('hidden')
+        logoPink.classList.add('logoPink')
+        logoWhite.classList.add('logoWhite')
+        logoBlue.classList.add('logoBlue')
+      }
+      if (distanceFromTop > 0) {
+        svg.style.opacity = '1'
+        svg.style.height = '15vh'
+      }
+    }
+    return {
+      init: init
+    }
+  }
+
   render () {
-    var animateLogo = () => {
-      var target
-      var banner
-      var svg
-      var logoPink
-      var logoWhite
-      var logoBlue
-      var windowHeight
-      const init = () => {
-        target = document.getElementById('logo')
-        banner = document.getElementById('banner')
-        logoPink = document.getElementById('logoPink')
-        logoWhite = document.getElementById('logoWhite')
-        logoBlue = document.getElementById('logoBlue')
-        svg = document.getElementById('svg')
-        if (typeof window !== 'undefined') {
-          windowHeight = window.innerHeight
-        }
-        addEventHandlers()
-        checkPosition()
-      }
-      const addEventHandlers = () => {
-        if (typeof window !== 'undefined') {
-          window.addEventListener('scroll', checkPosition)
-          window.addEventListener('resize', init)
-        }
-      }
-      const checkPosition = () => {
-        var distanceFromTop = banner.getBoundingClientRect().top
-        var distanceFromBottom = banner.getBoundingClientRect().bottom
-        if (windowHeight - distanceFromTop > windowHeight && windowHeight + distanceFromBottom > windowHeight) {
-          target.classList.add('logo')
-          target.classList.remove('hidden')
-          logoPink.classList.add('logoPink')
-          logoWhite.classList.add('logoWhite')
-          logoBlue.classList.add('logoBlue')
-          svg.style.opacity = '0'
-          svg.style.height = '0'
-        } 
-        else if (distanceFromTop >= 0) {
-          svg.style.opacity = '1'
-          svg.style.height = '15vh'
-        }
-        else {
-          target.classList.add('hidden')
-          target.classList.remove('logo')
-          logoPink.classList.remove('logoPink')
-          logoWhite.classList.remove('logoWhite')
-          logoBlue.classList.remove('logoBlue')
-        }
-      }
-      return {
-        init: init
-      }
-    }
-    if (typeof document !== 'undefined') {
-      const banner = document.getElementById('banner')
-      if(banner !== null) {
-        animateLogo().init()
-      }
-    }
-    
     // let logoPlaceHolder = <div className='logo'>loading...</div>
     // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
     const logo = <div id='logo'>
