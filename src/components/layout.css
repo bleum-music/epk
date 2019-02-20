@@ -127,12 +127,12 @@ body {
 }
 #music .title {
     text-align: center;
-    font-size: 20px;
+    /* font-size: 20px; */
     margin: 10px 10px 0 10px
 }
 #aboutus p, #social p, #contact p {
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 16px;
     text-align: left
 }
 #aboutus p {
@@ -157,6 +157,10 @@ body {
     }
 }
 
+#dan {
+    height: auto;
+    width: 100%
+}
 .image {animation: dan 1s 1}
 @keyframes dan {
     from {
@@ -211,9 +215,9 @@ iframe {
 }
 #contact p a {
     text-decoration: none;
-    height: 30px;
+    height: 20px;
     color: inherit;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #contact p a:hover {box-shadow: 0 4px 4px -4px black}

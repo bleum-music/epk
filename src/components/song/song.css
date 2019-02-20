@@ -1,6 +1,10 @@
 .songContainer {
     width: 30%;
-    position: relative
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
 }
 
 .songContainer img {
@@ -8,16 +12,14 @@
 }
 
 .player {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0,0,0,0);
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background-color: rgba(0,0,0,0.1);
     display: flex;
+    align-items: center
     /* padding: 5 16px; */
-    transform: translate(-50%,50%);
-    z-index: 2
+    /* transform: translate(-50%,50%); */
 }
 /* .info {
     display: flex;
@@ -34,28 +36,27 @@
     height: 100%
 } */
 .btns {
-    height: 50px;
-    width: 50px;
+    height: 20px;
+    width: 20px;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    padding: 5px
 }
 .black {
     position: absolute;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: 3;
+    height: 25px;
+    width: 100%; 
     background-color: rgba(0,0,0,0.3);
 }
-.white {
+/* .white {
     position: absolute;
     height: 100%;
     left: 0;
     bottom: 0;
     z-index: 3;
     background-color: rgba(256,256,256,0.3);
-}
+} */
 .play-pause {
     height: 100% !important;
     width: auto
