@@ -251,7 +251,7 @@ iframe {
     padding: 0
 }
 
-#buyDiv {
+/* #buyDiv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,10 +271,10 @@ iframe {
     font-size: 12px;
     text-align: center;
     color: black
-}
+} */
 .faceAnimate {animation: socialIcon 1s 1}
 .instaAnimate {animation: socialIcon 1.5s 1}
-.buyAnimate {animation: socialIcon 2s 1}
+/* .buyAnimate {animation: socialIcon 2s 1} */
 @keyframes socialIcon {
     from {
         transform: translate(100vw,0) rotate(1080deg);
@@ -317,7 +317,7 @@ iframe {
         height: 60px;
         width: 60px;
     }
-    #buyDiv {
+    /* #buyDiv {
         height: 60px !important;
         width: 60px !important;
     }
@@ -325,7 +325,7 @@ iframe {
         height: 20px;
         text-align: center;
         color: black
-    }
+    } */
     @keyframes left {
         from {
             transform: translate(-100vw,-100vh) rotate(-360deg)

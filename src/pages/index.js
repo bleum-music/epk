@@ -238,7 +238,7 @@ class App extends React.Component {
                 <img src={instagram} alt='link to instagram' />
               </a>
             </div>
-            <div id='buyDiv' className='links' onLoad={this.nullHandler('buyDiv','buyAnimate')}>
+            {/* <div id='buyDiv' className='links' onLoad={this.nullHandler('buyDiv','buyAnimate')}>
               <a
                 href='https://fanlink.to/visitbybleum'
                 target='_blank' rel='noopener noreferrer'
@@ -246,7 +246,7 @@ class App extends React.Component {
                 <p>stream/ </p>
                 <p>buy</p>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         <div id='contact'>
