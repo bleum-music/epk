@@ -308,6 +308,7 @@ iframe {
 }
 @media only screen and (max-width: 700px) {
     #banner {height: 71vh}
+    #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {width: 60%}
     .logoWhite {transform: translate(-50%,0)}
     .logoPink {transform: translate(-50%,-3%)}
     .logoBlue {transform: translate(-50%,3%)}
