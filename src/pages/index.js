@@ -12,10 +12,11 @@ import light_portrait from '../images/light_0.jpg'
 // import aboutTitle from '../images/about.png'
 import musicTitle from '../images/music.png'
 import contactTitle from '../images/contact.png'
-import logo_blue from '../images/logo_blue.png'
-import logo_pink from '../images/logo_pink.png'
-import logo_white from '../images/logo_white.png'
-import Arrow from '../components/arrow/arrow.js'
+// import logo_blue from '../images/logo_blue.png'
+// import logo_pink from '../images/logo_pink.png'
+// import logo_white from '../images/logo_white.png'
+import Arrow from '../components/arrow/arrow'
+import Logo from '../components/logo/logo'
 import Song from '../components/song/song'
 import ignoredYouGraphic from '../images/ignoredyou.png'
 import isItLoveGraphic from '../images/isitlove.png'
@@ -29,13 +30,13 @@ class App extends React.Component {
     loadFirst: false,
     // loadSecond: false,
     // loadThird: false,
-    logoLoaded: false
+    // logoLoaded: false
   }
 
   componentDidMount(){
-    const logoPinkLoad = new Image()
-    logoPinkLoad.src = logo_pink
-    logoPinkLoad.onload = () => {this.setState({logoLoaded: true})}
+    // const logoPinkLoad = new Image()
+    // logoPinkLoad.src = logo_pink
+    // logoPinkLoad.onload = () => {this.setState({logoLoaded: true})}
     const first = new Image()
     first.src = portrait
     first.onload = () => {this.setState({loadFirst: true})}
@@ -100,16 +101,16 @@ class App extends React.Component {
     var target
     var banner
     var svg
-    var logoPink
-    var logoWhite
-    var logoBlue
+    // var logoPink
+    // var logoWhite
+    // var logoBlue
     var windowHeight
     const init = () => {
       target = document.getElementById('logo')
       banner = document.getElementById('banner')
-      logoPink = document.getElementById('logoPink')
-      logoWhite = document.getElementById('logoWhite')
-      logoBlue = document.getElementById('logoBlue')
+      // logoPink = document.getElementById('logoPink')
+      // logoWhite = document.getElementById('logoWhite')
+      // logoBlue = document.getElementById('logoBlue')
       svg = document.getElementById('svg')
       if (typeof window !== 'undefined') {
         windowHeight = window.innerHeight
@@ -130,9 +131,9 @@ class App extends React.Component {
       if (windowHeight + distanceFromBottom < windowHeight && distanceFromBottom < 0) {
         target.classList.add('hidden')
         target.classList.remove('logo')
-        logoPink.classList.remove('logoPink')
-        logoWhite.classList.remove('logoWhite')
-        logoBlue.classList.remove('logoBlue')
+        // logoPink.classList.remove('logoPink')
+        // logoWhite.classList.remove('logoWhite')
+        // logoBlue.classList.remove('logoBlue')
       } 
       if (distanceFromTop < 0) {
         svg.style.opacity = '0'
@@ -141,9 +142,9 @@ class App extends React.Component {
       if (distanceFromBottom > 0) {
         target.classList.add('logo')
         target.classList.remove('hidden')
-        logoPink.classList.add('logoPink')
-        logoWhite.classList.add('logoWhite')
-        logoBlue.classList.add('logoBlue')
+        // logoPink.classList.add('logoPink')
+        // logoWhite.classList.add('logoWhite')
+        // logoBlue.classList.add('logoBlue')
       }
       if (distanceFromTop > 0) {
         svg.style.opacity = '1'
@@ -159,9 +160,10 @@ class App extends React.Component {
     // let logoPlaceHolder = <div className='logo'>loading...</div>
     // if(this.state.logoLoaded){logoPlaceHolder = <div className='logo'>
     const logo = <div id='logo'>
-      <img id='logoPink' src={logo_pink} alt='brand logo'/>
+      <Logo />
+      {/* <img id='logoPink' src={logo_pink} alt='brand logo'/>
       <img id='logoWhite' src={logo_white} alt='brand logo'/>
-      <img id='logoBlue' src={logo_blue} alt='brand logo'/>
+      <img id='logoBlue' src={logo_blue} alt='brand logo'/> */}
     </div>
 
     const couch = this.state.loadFirst? portrait : light_portrait

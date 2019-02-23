@@ -1,0 +1,29 @@
+#logoPink {
+    transform: translate(0,-10px);
+    stroke-dasharray: 2535;
+    stroke-dashoffset: 0;
+    animation: fromLeft 5s 1
+}
+#logoWhite {
+    stroke-dasharray: 2535;
+    stroke-dashoffset: 0;
+    animation: fromLeft 5s 1
+}
+#logoBlue {
+    transform: translate(0,10px);
+    stroke-dasharray: 2535;
+    stroke-dashoffset: 0;
+    animation: fromLeft 5s 1
+}
+@keyframes fromLeft {
+    0% {stroke-dashoffset: 2535}
+    100% {stroke-dashoffset: 0}
+}
+/* @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+@keyframes fromRight {
+    0% {stroke-dashoffset: -2535}
+    80% {stroke-dashoffset: 0}
+} */

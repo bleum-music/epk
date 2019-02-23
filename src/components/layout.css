@@ -79,7 +79,7 @@ body {
     transform: translate(-50%,-38%);
     animation: right 2s 1
 }
-@keyframes left {
+/* @keyframes left {
     from {
         transform: translate(-100vw,-100%) rotate(-360deg)
     }
@@ -102,7 +102,7 @@ body {
     to {
         transform: translate(-50%,-40%) rotate(0deg)
     }
-}
+} */
 
 #aboutTitle, #musicTitle, #contactTitle {
     height: 50px;
@@ -299,9 +299,9 @@ iframe {
     #aboutus, #social, #music, #contact {width: 70vw}
     iframe {min-height: 60% !important}
 }
-@media only screen and (max-width: 1150px) {
+/* @media only screen and (max-width: 1150px) {
     #banner .logo {width: 210px !important}
-}
+} */
 @media only screen and (max-width: 1000px) {
     #aboutus, #social, #music, #contact {width: 80vw}
     iframe {min-height: 45% !important}
