@@ -365,6 +365,6 @@ iframe {
 }
 @media only screen and (max-width: 374px) {
     #logoSvg {width: 80%}
-    #banner {height: 60vh}
+    #banner {height: 62vh}
     #aboutus, #social, #music, #contact {width: 95vw}
 }
