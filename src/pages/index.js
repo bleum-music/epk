@@ -133,8 +133,11 @@ class App extends React.Component {
         target.classList.add('hidden')
         target.classList.remove('logo')
         logoPink.classList.remove('logoPink')
+        logoPink.classList.add('hidden')
         logoWhite.classList.remove('logoWhite')
+        logoWhite.classList.add('hidden')
         logoBlue.classList.remove('logoBlue')
+        logoBlue.classList.add('hidden')
       } 
       if (distanceFromTop < 0) {
         svg.style.opacity = '0'
@@ -144,8 +147,11 @@ class App extends React.Component {
         target.classList.add('logo')
         target.classList.remove('hidden')
         logoPink.classList.add('logoPink')
+        logoPink.classList.remove('hidden')
         logoWhite.classList.add('logoWhite')
+        logoWhite.classList.remove('hidden')
         logoBlue.classList.add('logoBlue')
+        logoBlue.classList.remove('hidden')
       }
       if (distanceFromTop > 0) {
         svg.style.opacity = '1'
