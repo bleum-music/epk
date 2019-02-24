@@ -314,7 +314,7 @@ iframe {
 }
 @media only screen and (max-width: 700px) {
     #logoSvg {width: 70%}
-    #banner {height: 65vh}
+    #banner {height: 68vh}
     /* #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {width: 60%} */
     /* .logoWhite {transform: translate(-50%,0)}
     .logoPink {transform: translate(-50%,-3%)}
@@ -365,6 +365,6 @@ iframe {
 }
 @media only screen and (max-width: 374px) {
     #logoSvg {width: 80%}
-    #banner {height: 72vh}
+    #banner {height: 60vh}
     #aboutus, #social, #music, #contact {width: 95vw}
 }
