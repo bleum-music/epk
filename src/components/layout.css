@@ -50,12 +50,12 @@ body {
 .App #aboutus #banner #logo img {
     display: none
 }
-#banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
+/* #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {
     display: unset !important;
     height: auto;
     width: 40%
-}
-.logoPink {
+} */
+/* .logoPink {
     z-index: 2;
     position: absolute;
     top: 50%;
@@ -78,7 +78,7 @@ body {
     left: 50%;
     transform: translate(-50%,-38%);
     animation: right 2s 1
-}
+} */
 /* @keyframes left {
     from {
         transform: translate(-100vw,-100%) rotate(-360deg)
@@ -273,15 +273,15 @@ iframe {
     color: black
 } */
 .faceAnimate {animation: socialIcon 1s 1}
-.instaAnimate {animation: socialIcon 1.5s 1}
+.instaAnimate {animation: socialIcon 1s /*1.5s*/ 1}
 /* .buyAnimate {animation: socialIcon 2s 1} */
 @keyframes socialIcon {
     from {
-        transform: translate(100vw,0) rotate(1080deg);
+        /* transform: translate(100vw,0) rotate(1080deg); */
         opacity: 0
     }
     to {
-        transform: translate(0,0) rotate(0deg);
+        /* transform: translate(0,0) rotate(0deg); */
         opacity: 1
     }
 }
@@ -291,27 +291,34 @@ iframe {
     to {transform: translate(0,0)}
 } */
 
-@media only screen and (min-width: 1300px) {
-    body {max-width: 1600px}
-    #aboutus, #social, #music, #contact {width: 80vw}
+@media only screen and (min-width: 1600px) {
+    body {
+        max-width: 1300px;
+        margin: 0 auto
+    }
+    #logoSvg {max-height: 100%}
+    #svg {max-height: 100px}
+    #banner {max-height: 30vh}
+    iframe {max-height: 750px}
+    #socialIcons {max-width: 1300px}
+    #aboutus, #social, #music, #contact {max-width: 100%}
 }
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1600px) {
     #aboutus, #social, #music, #contact {width: 70vw}
     iframe {min-height: 60% !important}
+    #banner {height: 79vh}
 }
-/* @media only screen and (max-width: 1150px) {
-    #banner .logo {width: 210px !important}
-} */
 @media only screen and (max-width: 1000px) {
-    #aboutus, #social, #music, #contact {width: 80vw}
+    #aboutus, #social, #music, #contact {width: 70vw}
     iframe {min-height: 45% !important}
 }
 @media only screen and (max-width: 700px) {
+    #logoSvg {width: 70%}
     #banner {height: 71vh}
-    #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {width: 60%}
-    .logoWhite {transform: translate(-50%,0)}
+    /* #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {width: 60%} */
+    /* .logoWhite {transform: translate(-50%,0)}
     .logoPink {transform: translate(-50%,-3%)}
-    .logoBlue {transform: translate(-50%,3%)}
+    .logoBlue {transform: translate(-50%,3%)} */
     #socialIcons {width: 90vw}
     #socialIcons .links {
         height: 60px;
@@ -326,7 +333,7 @@ iframe {
         text-align: center;
         color: black
     } */
-    @keyframes left {
+    /* @keyframes left {
         from {
             transform: translate(-100vw,-100vh) rotate(-360deg)
         }
@@ -349,11 +356,12 @@ iframe {
         to {
             transform: translate(-50%,0) rotate(0deg)
         }
-    }
+    } */
     #aboutus, #social, #music, #contact {width: 90vw}
     iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 400px) {
-    #banner {height: 67vh}
+    #logoSvg {width: 80%}
+    #banner {height: 70vh}
     #aboutus, #social, #music, #contact {width: 95vw}
 }

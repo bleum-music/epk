@@ -1,15 +1,15 @@
-#logoPink {
+.logoPink {
     transform: translate(0,-10px);
     stroke-dasharray: 2535;
     stroke-dashoffset: 0;
     animation: fromLeft 5s 1
 }
-#logoWhite {
+.logoWhite {
     stroke-dasharray: 2535;
     stroke-dashoffset: 0;
     animation: fromLeft 5s 1
 }
-#logoBlue {
+.logoBlue {
     transform: translate(0,10px);
     stroke-dasharray: 2535;
     stroke-dashoffset: 0;

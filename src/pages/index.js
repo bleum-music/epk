@@ -101,16 +101,17 @@ class App extends React.Component {
     var target
     var banner
     var svg
-    // var logoPink
-    // var logoWhite
-    // var logoBlue
+    var logoPink
+    var logoWhite
+    var logoBlue
     var windowHeight
     const init = () => {
       target = document.getElementById('logo')
       banner = document.getElementById('banner')
-      // logoPink = document.getElementById('logoPink')
-      // logoWhite = document.getElementById('logoWhite')
-      // logoBlue = document.getElementById('logoBlue')
+      logoPink = document.getElementById('logoPink')
+      logoWhite = document.getElementById('logoWhite')
+      logoBlue = document.getElementById('logoBlue')
+      // console.log('logoBlue: ', logoBlue)
       svg = document.getElementById('svg')
       if (typeof window !== 'undefined') {
         windowHeight = window.innerHeight
@@ -131,9 +132,9 @@ class App extends React.Component {
       if (windowHeight + distanceFromBottom < windowHeight && distanceFromBottom < 0) {
         target.classList.add('hidden')
         target.classList.remove('logo')
-        // logoPink.classList.remove('logoPink')
-        // logoWhite.classList.remove('logoWhite')
-        // logoBlue.classList.remove('logoBlue')
+        logoPink.classList.remove('logoPink')
+        logoWhite.classList.remove('logoWhite')
+        logoBlue.classList.remove('logoBlue')
       } 
       if (distanceFromTop < 0) {
         svg.style.opacity = '0'
@@ -142,9 +143,9 @@ class App extends React.Component {
       if (distanceFromBottom > 0) {
         target.classList.add('logo')
         target.classList.remove('hidden')
-        // logoPink.classList.add('logoPink')
-        // logoWhite.classList.add('logoWhite')
-        // logoBlue.classList.add('logoBlue')
+        logoPink.classList.add('logoPink')
+        logoWhite.classList.add('logoWhite')
+        logoBlue.classList.add('logoBlue')
       }
       if (distanceFromTop > 0) {
         svg.style.opacity = '1'
