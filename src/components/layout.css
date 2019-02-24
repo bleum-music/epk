@@ -360,7 +360,7 @@ iframe {
     #aboutus, #social, #music, #contact {width: 90vw}
     iframe {min-height: 30% !important}
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 374px) {
     #logoSvg {width: 80%}
     #banner {height: 72vh}
     #aboutus, #social, #music, #contact {width: 95vw}

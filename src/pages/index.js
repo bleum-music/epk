@@ -142,6 +142,7 @@ class App extends React.Component {
       if (distanceFromTop < 0) {
         svg.style.opacity = '0'
         svg.style.height = '0'
+        logo
       }
       if (distanceFromBottom > 0) {
         target.classList.add('logo')
