@@ -314,7 +314,7 @@ iframe {
 }
 @media only screen and (max-width: 700px) {
     #logoSvg {width: 70%}
-    #banner {height: 71vh}
+    #banner {height: 75vh}
     /* #banner .logo .logoPink, #banner .logo .logoWhite, #banner .logo .logoBlue {width: 60%} */
     /* .logoWhite {transform: translate(-50%,0)}
     .logoPink {transform: translate(-50%,-3%)}
@@ -360,7 +360,7 @@ iframe {
     #aboutus, #social, #music, #contact {width: 90vw}
     iframe {min-height: 30% !important}
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 330px) {
     #logoSvg {width: 80%}
     #banner {height: 70vh}
     #aboutus, #social, #music, #contact {width: 95vw}
