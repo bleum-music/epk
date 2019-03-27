@@ -361,7 +361,7 @@ iframe {
     iframe {min-height: 30% !important}
 }
 @media only screen and (max-width: 413px) {
-    #banner {height: 77vh}
+    #banner {height: 67vh}
 }
 @media only screen and (max-width: 374px) {
     #logoSvg {width: 80%}
